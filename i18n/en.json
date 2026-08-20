@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "historia": "Story",
+    "midia": "In the media",
+    "contato": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Survivor · Voice · Witness",
+    "tagline": "\"For over twenty years I kept this story in silence. Today I choose to tell it — not as a victim, but as someone who went through it and came back.\"",
+    "imgAlt": "Nevena Mitić",
+    "cta": "Discover the story ↓"
+  },
+  "intro": {
+    "title": "A story of two decades of silence — and the decision to finally speak.",
+    "p1": "At 21, Nevena trusted the promise of a better future outside Serbia. What she found was captivity and exploitation — an experience it would take her more than twenty years to speak about out loud.",
+    "p2": "Today she brings her story to TV programs, stages, and conversations with other survivors, with one simple goal: to show that it is possible to rebuild an entire life after its worst chapter."
+  },
+  "historia": {
+    "label": "The story",
+    "imgAlt": "Behind the scenes of a shoot with Nevena Mitić",
+    "ch1": {
+      "title": "The offer",
+      "text": "A promise of work and a better life abroad — and the decision to trust someone she knew."
+    },
+    "ch2": {
+      "title": "Captivity",
+      "text": "Two years without documents, without freedom, under absolute control — until the rescue."
+    },
+    "ch3": {
+      "title": "The return",
+      "text": "Coming back to Serbia and more than twenty years rebuilding a life in silence, far from the spotlight."
+    },
+    "ch4": {
+      "title": "The voice",
+      "text": "The decision to break the silence — interviews, talks, and the choice to see herself as a survivor, not a victim."
+    }
+  },
+  "quote": {
+    "imgAlt": "Nevena Mitić giving testimony",
+    "text": "It was an old dream I had been holding onto for a long time — and it was finally coming true.",
+    "cite": "— From a video testimony"
+  },
+  "midia": {
+    "label": "In the media",
+    "card1": {
+      "imgAlt": "Live interview on Praktična Žena",
+      "title": "Live interview"
+    },
+    "card2": {
+      "imgAlt": "Appearance on the 150 Minuta program",
+      "title": "Panel discussion"
+    },
+    "card3": {
+      "imgAlt": "Still of the stage play about her story",
+      "caption": "Documentary · Theater",
+      "title": "On stage"
+    },
+    "card4": {
+      "imgAlt": "Still from Nevena Mitić's video testimony",
+      "caption": "Video testimony",
+      "title": "Testimony scene"
+    },
+    "card5": {
+      "imgAlt": "Cover of a Glas života feature about Nevena Mitić",
+      "caption": "Glas života",
+      "title": "Print feature"
+    },
+    "readCue": "Watch ↗",
+    "readCue2": "Read feature ↗"
+  },
+  "press": {
+    "label": "Also in the press",
+    "telegraf": "Telegraf",
+    "blic": "Blic",
+    "readCue": "Read interview ↗"
+  },
+  "cta": {
+    "title": "For interviews, talks, or support for other survivors.",
+    "email": "Email",
+    "write": "Write →",
+    "instagram": "Instagram",
+    "follow": "Follow →",
+    "press": "Press",
+    "presskit": "Media kit →"
+  },
+  "footer": {
+    "country": "Serbia"
+  }
+}

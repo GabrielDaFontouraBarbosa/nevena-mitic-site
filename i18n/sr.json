@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "historia": "Priča",
+    "midia": "U medijima",
+    "contato": "Kontakt"
+  },
+  "hero": {
+    "eyebrow": "Preživela · Glas · Svedok",
+    "tagline": "„Više od dvadeset godina čuvala sam ovu priču u tišini. Danas biram da je ispričam — ne kao žrtva, već kao neko ko je to prošao i vratio se.”",
+    "imgAlt": "Nevena Mitić",
+    "cta": "Upoznaj priču ↓"
+  },
+  "intro": {
+    "title": "Priča o dve decenije ćutanja — i odluci da konačno progovori.",
+    "p1": "Sa 21 godinom, Nevena je poverovala obećanju boljeg života van Srbije. Ono što je pronašla bilo je zarobljeništvo i eksploatacija — iskustvo o kome joj je trebalo više od dvadeset godina da progovori naglas.",
+    "p2": "Danas svoju priču iznosi na televiziji, na binama i u razgovorima sa drugim preživelima, sa jednim jednostavnim ciljem: da pokaže da je moguće ponovo izgraditi ceo život posle najtežeg poglavlja."
+  },
+  "historia": {
+    "label": "Priča",
+    "imgAlt": "Iza kulisa snimanja sa Nevenom Mitić",
+    "ch1": {
+      "title": "Poziv",
+      "text": "Obećanje posla i boljeg života van zemlje — i odluka da poveruje nekome koga je poznavala."
+    },
+    "ch2": {
+      "title": "Zarobljeništvo",
+      "text": "Dve godine bez dokumenata, bez slobode, pod potpunom kontrolom — do trenutka spasavanja."
+    },
+    "ch3": {
+      "title": "Povratak",
+      "text": "Povratak u Srbiju i više od dvadeset godina obnavljanja života u tišini, daleko od javnosti."
+    },
+    "ch4": {
+      "title": "Glas",
+      "text": "Odluka da prekine tišinu — intervjui, predavanja i izbor da sebe vidi kao preživelu, a ne kao žrtvu."
+    }
+  },
+  "quote": {
+    "imgAlt": "Nevena Mitić daje izjavu",
+    "text": "Bio je to stari san koji sam dugo čuvala — i konačno se ostvarivao.",
+    "cite": "— Iz video-izjave"
+  },
+  "midia": {
+    "label": "U medijima",
+    "card1": {
+      "imgAlt": "Intervju uživo na Praktičnoj ženi",
+      "title": "Intervju uživo"
+    },
+    "card2": {
+      "imgAlt": "Gostovanje u emisiji 150 minuta",
+      "title": "Okrugli sto"
+    },
+    "card3": {
+      "imgAlt": "Kadar predstave o njenoj priči, projektovan na pozornici",
+      "caption": "Dokumentarac · Pozorište",
+      "title": "Scena na pozornici"
+    },
+    "card4": {
+      "imgAlt": "Kadar iz video-izjave Nevene Mitić",
+      "caption": "Video-izjava",
+      "title": "Scena izjave"
+    },
+    "card5": {
+      "imgAlt": "Naslovna strana teksta iz Glasa života o Neveni Mitić",
+      "caption": "Glas života",
+      "title": "Novinski tekst"
+    },
+    "readCue": "Pogledaj ↗",
+    "readCue2": "Pročitaj tekst ↗"
+  },
+  "press": {
+    "label": "Takođe u medijima",
+    "telegraf": "Telegraf",
+    "blic": "Blic",
+    "readCue": "Pročitaj intervju ↗"
+  },
+  "cta": {
+    "title": "Za intervjue, predavanja ili podršku drugim preživelima.",
+    "email": "Imejl",
+    "write": "Napiši →",
+    "instagram": "Instagram",
+    "follow": "Zaprati →",
+    "press": "Za medije",
+    "presskit": "Medijski kit →"
+  },
+  "footer": {
+    "country": "Srbija"
+  }
+}

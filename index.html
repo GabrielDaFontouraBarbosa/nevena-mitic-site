@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nevena Mitić</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,680;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js" defer></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js" defer></script>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="nav-bg" id="navBg"></div>
+<nav>
+  <div class="brand">Nevena Mitić</div>
+  <div class="nav-desktop">
+    <ul>
+      <li><a href="#historia" data-i18n="nav.historia">História</a></li>
+      <li><a href="#midia" data-i18n="nav.midia">Na mídia</a></li>
+      <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
+    </ul>
+    <div class="lang-switch" id="langSwitch">
+      <button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">🇧🇷</button>
+      <button type="button" data-lang="en" aria-label="English" aria-pressed="false">🇬🇧</button>
+      <button type="button" data-lang="ru" aria-label="Русский" aria-pressed="false">🇷🇺</button>
+      <button type="button" data-lang="sr" aria-label="Srpski" aria-pressed="false">🇷🇸</button>
+    </div>
+  </div>
+  <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navPanel">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-scrim" id="navScrim"></div>
+<div class="nav-panel" id="navPanel">
+  <ul>
+    <li><a href="#historia" data-i18n="nav.historia">História</a></li>
+    <li><a href="#midia" data-i18n="nav.midia">Na mídia</a></li>
+    <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
+  </ul>
+  <div class="lang-switch">
+    <button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">🇧🇷</button>
+    <button type="button" data-lang="en" aria-label="English" aria-pressed="false">🇬🇧</button>
+    <button type="button" data-lang="ru" aria-label="Русский" aria-pressed="false">🇷🇺</button>
+    <button type="button" data-lang="sr" aria-label="Srpski" aria-pressed="false">🇷🇸</button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-img-frame">
+    <img class="hero-img" id="heroImg" src="assets/hero.jpg" alt="Nevena Mitić" data-i18n-alt="hero.imgAlt">
+  </div>
+  <div class="hero-tint"></div>
+  <div class="hero-tint2"></div>
+  <div class="hero-content">
+    <span class="eyebrow" data-i18n="hero.eyebrow">Sobrevivente · Voz · Testemunha</span>
+    <h1 class="display">Nevena<br>Mitić</h1>
+    <p class="tagline" data-i18n="hero.tagline">"Por mais de vinte anos guardei essa história em silêncio. Hoje escolho contá-la — não como vítima, mas como alguém que atravessou e voltou."</p>
+    <a class="btn-scroll" href="#historia" data-i18n="hero.cta">Conhecer a história ↓</a>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-group">
+      <span class="ticker-item">TELEGRAF</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">BLIC</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">OBJEKTIV TV</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">PRAKTIČNA ŽENA</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">150 MINUTA</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">GLAS ŽIVOTA</span><span class="ticker-sep">·</span>
+    </div>
+    <div class="ticker-group ticker-dup">
+      <span class="ticker-item">TELEGRAF</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">BLIC</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">OBJEKTIV TV</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">PRAKTIČNA ŽENA</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">150 MINUTA</span><span class="ticker-sep">·</span>
+      <span class="ticker-item">GLAS ŽIVOTA</span><span class="ticker-sep">·</span>
+    </div>
+  </div>
+</div>
+
+<section class="intro reveal">
+  <div class="intro-grid">
+    <h2 class="reveal" data-i18n="intro.title">Uma história de duas décadas de silêncio — e a decisão de finalmente falar.</h2>
+    <div class="intro-text">
+      <p class="reveal" data-i18n="intro.p1">Aos 21 anos, Nevena confiou na promessa de um futuro melhor fora da Sérvia. O que encontrou foi cativeiro e exploração — uma experiência que levaria mais de vinte anos para conseguir contar em voz alta.</p>
+      <p class="reveal" data-i18n="intro.p2">Hoje ela leva sua história a programas de TV, palcos e conversas com outras sobreviventes, com um objetivo simples: mostrar que é possível reconstruir uma vida inteira depois do pior capítulo dela.</p>
+    </div>
+  </div>
+</section>
+
+<section class="historia" id="historia">
+  <div class="historia-watermark" aria-hidden="true">20</div>
+  <div class="section-label reveal" data-i18n="historia.label">A história</div>
+  <div class="historia-grid">
+    <div class="historia-img-wrap reveal">
+      <img src="assets/historia.jpg" alt="Bastidores de gravação com Nevena Mitić" loading="lazy" width="1080" height="995" data-i18n-alt="historia.imgAlt">
+    </div>
+    <div class="chapters">
+      <div class="timeline-rail" aria-hidden="true"><div class="timeline-fill" id="timelineFill"></div></div>
+      <div class="chapter reveal">
+        <span class="num display">I.</span>
+        <div>
+          <h3 data-i18n="historia.ch1.title">O convite</h3>
+          <p data-i18n="historia.ch1.text">Uma promessa de trabalho e uma vida melhor fora do país — e a decisão de confiar em alguém conhecido.</p>
+        </div>
+      </div>
+      <div class="chapter reveal">
+        <span class="num display">II.</span>
+        <div>
+          <h3 data-i18n="historia.ch2.title">O cativeiro</h3>
+          <p data-i18n="historia.ch2.text">Dois anos sem documentos, sem liberdade, sob controle absoluto — até o resgate.</p>
+        </div>
+      </div>
+      <div class="chapter reveal">
+        <span class="num display">III.</span>
+        <div>
+          <h3 data-i18n="historia.ch3.title">A volta</h3>
+          <p data-i18n="historia.ch3.text">O retorno à Sérvia e mais de vinte anos reconstruindo uma vida em silêncio, longe dos holofotes.</p>
+        </div>
+      </div>
+      <div class="chapter reveal">
+        <span class="num display">IV.</span>
+        <div>
+          <h3 data-i18n="historia.ch4.title">A voz</h3>
+          <p data-i18n="historia.ch4.text">A decisão de romper o silêncio — entrevistas, palestras, e a escolha de se ver como sobrevivente, não vítima.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section reveal">
+  <div class="quote-grid">
+    <div class="quote-img-wrap">
+      <img src="assets/citacao.jpg" alt="Nevena Mitić em depoimento" loading="lazy" width="2400" height="1080" data-i18n-alt="quote.imgAlt">
+    </div>
+    <div class="quote-text">
+      <div class="quote-mark display">"</div>
+      <blockquote data-i18n="quote.text">Era um sonho antigo que eu guardava há muito tempo — e finalmente estava se realizando.</blockquote>
+      <div class="quote-cite" data-i18n="quote.cite">— De um depoimento em vídeo</div>
+    </div>
+  </div>
+</section>
+
+<section class="midia" id="midia">
+  <div class="section-label reveal" data-i18n="midia.label">Na mídia</div>
+
+  <div class="midia-grid">
+    <!-- TODO: trocar href="#" pelo link real de cada matéria/vídeo antes de publicar -->
+    <a class="midia-card reveal" href="#" data-i18n-href-todo="link real pendente">
+      <div class="midia-img">
+        <img src="assets/midia-1.jpg" alt="Entrevista ao vivo no Praktična Žena" loading="lazy" width="1069" height="599" data-i18n-alt="midia.card1.imgAlt">
+      </div>
+      <span class="midia-link-cue" data-i18n="midia.readCue">Assistir ↗</span>
+      <div class="midia-chyron">
+        <span class="caption">Praktična Žena · TV</span>
+        <div class="title display" data-i18n="midia.card1.title">Entrevista ao vivo</div>
+      </div>
+    </a>
+    <a class="midia-card reveal" href="#" data-i18n-href-todo="link real pendente">
+      <div class="midia-img">
+        <img src="assets/midia-2.jpg" alt="Participação no programa 150 Minuta" loading="lazy" width="1039" height="560" data-i18n-alt="midia.card2.imgAlt">
+      </div>
+      <span class="midia-link-cue" data-i18n="midia.readCue">Assistir ↗</span>
+      <div class="midia-chyron">
+        <span class="caption">150 Minuta · TV</span>
+        <div class="title display" data-i18n="midia.card2.title">Mesa-redonda</div>
+      </div>
+    </a>
+    <a class="midia-card reveal" href="#" data-i18n-href-todo="link real pendente">
+      <div class="midia-img">
+        <img src="assets/midia-3.jpg" alt="Still da peça projetada em palco sobre a história dela" loading="lazy" width="888" height="493" data-i18n-alt="midia.card3.imgAlt">
+      </div>
+      <span class="midia-link-cue" data-i18n="midia.readCue">Assistir ↗</span>
+      <div class="midia-chyron">
+        <span class="caption" data-i18n="midia.card3.caption">Documentário · Teatro</span>
+        <div class="title display" data-i18n="midia.card3.title">Peça em cena</div>
+      </div>
+    </a>
+    <a class="midia-card reveal" href="#" data-i18n-href-todo="link real pendente">
+      <div class="midia-img">
+        <img src="assets/midia-4.jpg" alt="Still do vídeo-depoimento de Nevena Mitić" loading="lazy" width="2400" height="1080" data-i18n-alt="midia.card4.imgAlt">
+      </div>
+      <span class="midia-link-cue" data-i18n="midia.readCue">Assistir ↗</span>
+      <div class="midia-chyron">
+        <span class="caption" data-i18n="midia.card4.caption">Vídeo-depoimento</span>
+        <div class="title display" data-i18n="midia.card4.title">Cena do depoimento</div>
+      </div>
+    </a>
+    <a class="midia-card reveal" href="#" data-i18n-href-todo="link real pendente">
+      <div class="midia-img">
+        <img src="assets/midia-5.jpg" alt="Capa de matéria da revista Glas života sobre Nevena Mitić" loading="lazy" width="1036" height="671" data-i18n-alt="midia.card5.imgAlt">
+      </div>
+      <span class="midia-link-cue" data-i18n="midia.readCue2">Ler matéria ↗</span>
+      <div class="midia-chyron">
+        <span class="caption" data-i18n="midia.card5.caption">Glas života</span>
+        <div class="title display" data-i18n="midia.card5.title">Reportagem impressa</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="press-list reveal">
+    <span class="press-label caption" data-i18n="press.label">Também na imprensa</span>
+    <!-- TODO: trocar href="#" pelo link real de cada entrevista antes de publicar -->
+    <a href="#"><span data-i18n="press.telegraf">Telegraf</span><span class="press-cue" data-i18n="press.readCue">Ler entrevista ↗</span></a>
+    <a href="#"><span data-i18n="press.blic">Blic</span><span class="press-cue" data-i18n="press.readCue">Ler entrevista ↗</span></a>
+  </div>
+</section>
+
+<section class="cta reveal" id="contato">
+  <div class="cta-inner">
+    <div>
+      <h2 data-i18n="cta.title">Para entrevistas, palestras ou apoio a outras sobreviventes.</h2>
+      <a class="btn-primary" href="mailto:contato@nevenamitic.com">
+        <span data-i18n="cta.email">E-mail</span><span data-i18n="cta.write">Escrever →</span>
+      </a>
+    </div>
+    <div class="cta-links">
+      <a href="#"><span data-i18n="cta.instagram">Instagram</span><span data-i18n="cta.follow">Seguir →</span></a>
+      <a href="#"><span data-i18n="cta.press">Imprensa</span><span data-i18n="cta.presskit">Kit de mídia →</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© Nevena Mitić</span>
+  <span data-i18n="footer.country">Sérvia</span>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

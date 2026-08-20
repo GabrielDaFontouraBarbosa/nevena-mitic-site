@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "historia": "História",
+    "midia": "Na mídia",
+    "contato": "Contato"
+  },
+  "hero": {
+    "eyebrow": "Sobrevivente · Voz · Testemunha",
+    "tagline": "\"Por mais de vinte anos guardei essa história em silêncio. Hoje escolho contá-la — não como vítima, mas como alguém que atravessou e voltou.\"",
+    "imgAlt": "Nevena Mitić",
+    "cta": "Conhecer a história ↓"
+  },
+  "intro": {
+    "title": "Uma história de duas décadas de silêncio — e a decisão de finalmente falar.",
+    "p1": "Aos 21 anos, Nevena confiou na promessa de um futuro melhor fora da Sérvia. O que encontrou foi cativeiro e exploração — uma experiência que levaria mais de vinte anos para conseguir contar em voz alta.",
+    "p2": "Hoje ela leva sua história a programas de TV, palcos e conversas com outras sobreviventes, com um objetivo simples: mostrar que é possível reconstruir uma vida inteira depois do pior capítulo dela."
+  },
+  "historia": {
+    "label": "A história",
+    "imgAlt": "Bastidores de gravação com Nevena Mitić",
+    "ch1": {
+      "title": "O convite",
+      "text": "Uma promessa de trabalho e uma vida melhor fora do país — e a decisão de confiar em alguém conhecido."
+    },
+    "ch2": {
+      "title": "O cativeiro",
+      "text": "Dois anos sem documentos, sem liberdade, sob controle absoluto — até o resgate."
+    },
+    "ch3": {
+      "title": "A volta",
+      "text": "O retorno à Sérvia e mais de vinte anos reconstruindo uma vida em silêncio, longe dos holofotes."
+    },
+    "ch4": {
+      "title": "A voz",
+      "text": "A decisão de romper o silêncio — entrevistas, palestras, e a escolha de se ver como sobrevivente, não vítima."
+    }
+  },
+  "quote": {
+    "imgAlt": "Nevena Mitić em depoimento",
+    "text": "Era um sonho antigo que eu guardava há muito tempo — e finalmente estava se realizando.",
+    "cite": "— De um depoimento em vídeo"
+  },
+  "midia": {
+    "label": "Na mídia",
+    "card1": {
+      "imgAlt": "Entrevista ao vivo no Praktična Žena",
+      "title": "Entrevista ao vivo"
+    },
+    "card2": {
+      "imgAlt": "Participação no programa 150 Minuta",
+      "title": "Mesa-redonda"
+    },
+    "card3": {
+      "imgAlt": "Still da peça projetada em palco sobre a história dela",
+      "caption": "Documentário · Teatro",
+      "title": "Peça em cena"
+    },
+    "card4": {
+      "imgAlt": "Still do vídeo-depoimento de Nevena Mitić",
+      "caption": "Vídeo-depoimento",
+      "title": "Cena do depoimento"
+    },
+    "card5": {
+      "imgAlt": "Capa de matéria da revista Glas života sobre Nevena Mitić",
+      "caption": "Glas života",
+      "title": "Reportagem impressa"
+    },
+    "readCue": "Assistir ↗",
+    "readCue2": "Ler matéria ↗"
+  },
+  "press": {
+    "label": "Também na imprensa",
+    "telegraf": "Telegraf",
+    "blic": "Blic",
+    "readCue": "Ler entrevista ↗"
+  },
+  "cta": {
+    "title": "Para entrevistas, palestras ou apoio a outras sobreviventes.",
+    "email": "E-mail",
+    "write": "Escrever →",
+    "instagram": "Instagram",
+    "follow": "Seguir →",
+    "press": "Imprensa",
+    "presskit": "Kit de mídia →"
+  },
+  "footer": {
+    "country": "Sérvia"
+  }
+}
