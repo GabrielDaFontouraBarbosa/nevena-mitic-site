@@ -66,13 +66,24 @@
       "title": "Novinski tekst"
     },
     "readCue": "Pogledaj ↗",
-    "readCue2": "Pročitaj tekst ↗"
+    "readCue2": "Pročitaj tekst ↗",
+    "pending": "Uskoro"
   },
   "press": {
     "label": "Takođe u medijima",
     "telegraf": "Telegraf",
     "blic": "Blic",
-    "readCue": "Pročitaj intervju ↗"
+    "bbc": "BBC na srpskom",
+    "zero21": "021.rs",
+    "juzne": "Južne vesti",
+    "nova": "Nova.rs",
+    "sedam24": "24sedam",
+    "mondo": "Mondo",
+    "sesta": "BUKA Magazin",
+    "akoprogovorim": "Ako progovorim",
+    "novidan": "Novi dan",
+    "readCue": "Pročitaj intervju ↗",
+    "watchCue": "Pogledaj ↗"
   },
   "cta": {
     "title": "Za intervjue, predavanja ili podršku drugim preživelima.",
@@ -80,6 +91,9 @@
     "write": "Napiši →",
     "instagram": "Instagram",
     "follow": "Zaprati →",
+    "whatsapp": "WhatsApp →",
+    "phone": "Telefon",
+    "call": "Pozovi →",
     "press": "Za medije",
     "presskit": "Medijski kit →"
   },

@@ -66,13 +66,24 @@
       "title": "Публикация в прессе"
     },
     "readCue": "Смотреть ↗",
-    "readCue2": "Читать материал ↗"
+    "readCue2": "Читать материал ↗",
+    "pending": "Скоро"
   },
   "press": {
     "label": "Также в прессе",
     "telegraf": "Telegraf",
     "blic": "Blic",
-    "readCue": "Читать интервью ↗"
+    "bbc": "BBC News на сербском",
+    "zero21": "021.rs",
+    "juzne": "Južne vesti",
+    "nova": "Nova.rs",
+    "sedam24": "24sedam",
+    "mondo": "Mondo",
+    "sesta": "BUKA Magazin",
+    "akoprogovorim": "Ako progovorim",
+    "novidan": "Novi dan",
+    "readCue": "Читать интервью ↗",
+    "watchCue": "Смотреть ↗"
   },
   "cta": {
     "title": "Для интервью, выступлений или поддержки других выживших.",
@@ -80,6 +91,9 @@
     "write": "Написать →",
     "instagram": "Instagram",
     "follow": "Подписаться →",
+    "whatsapp": "WhatsApp →",
+    "phone": "Телефон",
+    "call": "Позвонить →",
     "press": "Пресса",
     "presskit": "Пресс-кит →"
   },

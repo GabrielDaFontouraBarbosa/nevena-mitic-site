@@ -66,13 +66,24 @@
       "title": "Reportagem impressa"
     },
     "readCue": "Assistir ↗",
-    "readCue2": "Ler matéria ↗"
+    "readCue2": "Ler matéria ↗",
+    "pending": "Em breve"
   },
   "press": {
     "label": "Também na imprensa",
     "telegraf": "Telegraf",
     "blic": "Blic",
-    "readCue": "Ler entrevista ↗"
+    "bbc": "BBC News Srbija",
+    "zero21": "021.rs",
+    "juzne": "Južne vesti",
+    "nova": "Nova.rs",
+    "sedam24": "24sedam",
+    "mondo": "Mondo",
+    "sesta": "BUKA Magazin",
+    "akoprogovorim": "Ako progovorim",
+    "novidan": "Novi dan",
+    "readCue": "Ler entrevista ↗",
+    "watchCue": "Assistir ↗"
   },
   "cta": {
     "title": "Para entrevistas, palestras ou apoio a outras sobreviventes.",
@@ -80,6 +91,9 @@
     "write": "Escrever →",
     "instagram": "Instagram",
     "follow": "Seguir →",
+    "whatsapp": "WhatsApp →",
+    "phone": "Telefone",
+    "call": "Ligar →",
     "press": "Imprensa",
     "presskit": "Kit de mídia →"
   },
