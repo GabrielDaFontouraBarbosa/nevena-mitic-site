@@ -16,14 +16,27 @@
   window.addEventListener('scroll', updateProgress, { passive: true });
   updateProgress();
 
-  /* ---------- LIBS (GSAP / ScrollTrigger / Lenis / SplitType via CDN) ---------- */
+  /* ---------- LIBS (GSAP / ScrollTrigger / SplitText / ScrambleText / CustomEase / Lenis via CDN) ---------- */
   var hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
   var hasLenis = typeof window.Lenis !== 'undefined';
-  var hasSplitType = typeof window.SplitType !== 'undefined';
+  var hasSplitText = hasGSAP && typeof window.SplitText !== 'undefined';
+  var hasScramble = hasGSAP && typeof window.ScrambleTextPlugin !== 'undefined';
+  var hasCustomEase = hasGSAP && typeof window.CustomEase !== 'undefined';
   var lenis = null;
 
   if (hasGSAP) {
     gsap.registerPlugin(ScrollTrigger);
+    if (hasSplitText) gsap.registerPlugin(SplitText);
+    if (hasScramble) gsap.registerPlugin(ScrambleTextPlugin);
+    if (hasCustomEase) gsap.registerPlugin(CustomEase);
+  }
+
+  // assinatura de movimento do site: desacelera com uma leve "respirada" no
+  // fim em vez do ease-out genérico — usado nos reveals e no hero.
+  var SIGNATURE_EASE = 'power3.out';
+  if (hasCustomEase) {
+    CustomEase.create('neveEase', 'M0,0 C0.16,1 0.3,1 0.52,0.99 0.72,0.98 0.86,1 1,1');
+    SIGNATURE_EASE = 'neveEase';
   }
 
   if (hasGSAP && hasLenis && !prefersReducedMotion) {
@@ -72,7 +85,7 @@
           scale: 1,
           filter: 'blur(0px)',
           duration: 0.9,
-          ease: 'power3.out',
+          ease: SIGNATURE_EASE,
           stagger: 0.08,
         });
         batch.forEach(function (el) { el.classList.add('is-visible'); });
@@ -80,22 +93,58 @@
     });
   }
 
-  /* ---------- HERO: TITULO POR LINHA (SplitType, uma vez, no load) ---------- */
-  if (hasGSAP && hasSplitType && !prefersReducedMotion) {
+  /* ---------- HERO: TITULO POR LINHA (GSAP SplitText, uma vez, no load) ---------- */
+  if (hasGSAP && hasSplitText && !prefersReducedMotion) {
     var heroH1 = document.querySelector('.hero h1');
     if (heroH1) {
       heroH1.style.animation = 'none'; // a CSS keyframe fica só de fallback
-      var split = new SplitType(heroH1, { types: 'lines' });
-      gsap.set(split.lines, { opacity: 0, y: '100%' });
-      gsap.to(split.lines, {
-        opacity: 1,
-        y: '0%',
-        duration: 1,
-        ease: 'power4.out',
-        stagger: 0.12,
-        delay: 0.3,
+      SplitText.create(heroH1, {
+        type: 'lines',
+        linesClass: 'line',
+        onSplit: function (self) {
+          gsap.set(self.lines, { opacity: 0, y: '100%' });
+          return gsap.to(self.lines, {
+            opacity: 1,
+            y: '0%',
+            duration: 1,
+            ease: 'power4.out',
+            stagger: 0.12,
+            delay: 0.3,
+          });
+        },
       });
     }
+  }
+
+  /* ---------- DECODIFICACAO (ScrambleText) NOS RÓTULOS CURTOS ---------- */
+  // efeito de "documento sendo revelado" nos rótulos estruturais (eyebrow do
+  // hero + labels de seção) — nunca aplicado às falas/depoimento da Nevena.
+  if (hasGSAP && hasScramble && !prefersReducedMotion) {
+    var heroEyebrow = document.querySelector('.hero .eyebrow');
+    if (heroEyebrow) {
+      var eyebrowText = heroEyebrow.textContent;
+      gsap.to(heroEyebrow, {
+        duration: 0.9,
+        delay: 0.15,
+        scrambleText: { text: eyebrowText, chars: 'upperAndLowerCase', speed: 0.4 },
+        ease: 'none',
+      });
+    }
+    document.querySelectorAll('.section-label, .press-label').forEach(function (el) {
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 88%',
+        once: true,
+        onEnter: function () {
+          var text = el.textContent;
+          gsap.to(el, {
+            duration: 0.8,
+            scrambleText: { text: text, chars: 'upperAndLowerCase', speed: 0.45 },
+            ease: 'none',
+          });
+        },
+      });
+    });
   }
 
   /* ---------- PIN NA SECAO DE CITACAO (desktop only) ---------- */
@@ -128,22 +177,48 @@
     }
   }
 
-  /* ---------- HOVER MAGNETICO NOS LINKS DO CTA FINAL ---------- */
-  if (hasGSAP && !prefersReducedMotion) {
-    document.querySelectorAll('.cta-links a').forEach(function (link) {
-      link.addEventListener('mousemove', function (e) {
-        var rect = link.getBoundingClientRect();
+  /* ---------- HOVER MAGNETICO (CTA final, nav desktop, seletor de idioma) ---------- */
+  if (hasGSAP && !prefersReducedMotion && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    function magnetize(el, strengthX, strengthY) {
+      el.addEventListener('mousemove', function (e) {
+        var rect = el.getBoundingClientRect();
         var dx = e.clientX - (rect.left + rect.width / 2);
         var dy = e.clientY - (rect.top + rect.height / 2);
-        gsap.to(link, {
-          x: Math.max(-4, Math.min(4, dx * 0.04)),
-          y: Math.max(-3, Math.min(3, dy * 0.25)),
+        gsap.to(el, {
+          x: Math.max(-strengthX, Math.min(strengthX, dx * 0.35)),
+          y: Math.max(-strengthY, Math.min(strengthY, dy * 0.35)),
           duration: 0.4,
           ease: 'power2.out',
         });
       });
-      link.addEventListener('mouseleave', function () {
-        gsap.to(link, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+      el.addEventListener('mouseleave', function () {
+        gsap.to(el, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+      });
+    }
+    document.querySelectorAll('.cta-links a').forEach(function (el) { magnetize(el, 4, 3); });
+    document.querySelectorAll('.nav-desktop ul a').forEach(function (el) { magnetize(el, 5, 3); });
+    document.querySelectorAll('.nav-desktop .lang-switch button').forEach(function (el) { magnetize(el, 3, 3); });
+  }
+
+  /* ---------- TILT 3D NOS CARDS DE MIDIA (desktop, ponteiro fino) ---------- */
+  if (hasGSAP && !prefersReducedMotion && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    document.querySelectorAll('.midia-card:not(.midia-card--pending)').forEach(function (card) {
+      var rotateX = gsap.quickTo(card, 'rotateX', { duration: 0.5, ease: 'power2.out' });
+      var rotateY = gsap.quickTo(card, 'rotateY', { duration: 0.5, ease: 'power2.out' });
+      var lift = gsap.quickTo(card, 'y', { duration: 0.4, ease: 'power2.out' });
+      gsap.set(card, { transformPerspective: 700, transformStyle: 'preserve-3d' });
+      card.addEventListener('mouseenter', function () { lift(-4); });
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var px = (e.clientX - rect.left) / rect.width - 0.5;
+        var py = (e.clientY - rect.top) / rect.height - 0.5;
+        rotateY(px * 10);
+        rotateX(py * -10);
+      });
+      card.addEventListener('mouseleave', function () {
+        rotateX(0);
+        rotateY(0);
+        lift(0);
       });
     });
   }

@@ -10,11 +10,14 @@
 <link rel="stylesheet" href="style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/SplitText.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrambleTextPlugin.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/CustomEase.min.js" defer></script>
 <script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js" defer></script>
-<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js" defer></script>
 </head>
 <body>
 
+<div class="grain" aria-hidden="true"></div>
 <div class="progress-bar" id="progressBar"></div>
 
 <div class="nav-bg" id="navBg"></div>
@@ -27,10 +30,10 @@
       <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
     </ul>
     <div class="lang-switch" id="langSwitch">
-      <button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">🇧🇷</button>
-      <button type="button" data-lang="en" aria-label="English" aria-pressed="false">🇬🇧</button>
-      <button type="button" data-lang="ru" aria-label="Русский" aria-pressed="false">🇷🇺</button>
-      <button type="button" data-lang="sr" aria-label="Srpski" aria-pressed="false">🇷🇸</button>
+      <button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">PT</button>
+      <button type="button" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+      <button type="button" data-lang="ru" aria-label="Русский" aria-pressed="false">RU</button>
+      <button type="button" data-lang="sr" aria-label="Srpski" aria-pressed="false">SR</button>
     </div>
   </div>
   <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navPanel">
@@ -45,10 +48,10 @@
     <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
   </ul>
   <div class="lang-switch">
-    <button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">🇧🇷</button>
-    <button type="button" data-lang="en" aria-label="English" aria-pressed="false">🇬🇧</button>
-    <button type="button" data-lang="ru" aria-label="Русский" aria-pressed="false">🇷🇺</button>
-    <button type="button" data-lang="sr" aria-label="Srpski" aria-pressed="false">🇷🇸</button>
+    <button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">PT</button>
+    <button type="button" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+    <button type="button" data-lang="ru" aria-label="Русский" aria-pressed="false">RU</button>
+    <button type="button" data-lang="sr" aria-label="Srpski" aria-pressed="false">SR</button>
   </div>
 </div>
 
