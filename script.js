@@ -16,17 +16,15 @@
   window.addEventListener('scroll', updateProgress, { passive: true });
   updateProgress();
 
-  /* ---------- LIBS (GSAP / ScrollTrigger / SplitText / ScrambleText / CustomEase / Lenis via CDN) ---------- */
+  /* ---------- LIBS (GSAP / ScrollTrigger / ScrambleText / CustomEase / Lenis via CDN) ---------- */
   var hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
   var hasLenis = typeof window.Lenis !== 'undefined';
-  var hasSplitText = hasGSAP && typeof window.SplitText !== 'undefined';
   var hasScramble = hasGSAP && typeof window.ScrambleTextPlugin !== 'undefined';
   var hasCustomEase = hasGSAP && typeof window.CustomEase !== 'undefined';
   var lenis = null;
 
   if (hasGSAP) {
     gsap.registerPlugin(ScrollTrigger);
-    if (hasSplitText) gsap.registerPlugin(SplitText);
     if (hasScramble) gsap.registerPlugin(ScrambleTextPlugin);
     if (hasCustomEase) gsap.registerPlugin(CustomEase);
   }
@@ -91,29 +89,6 @@
         batch.forEach(function (el) { el.classList.add('is-visible'); });
       },
     });
-  }
-
-  /* ---------- HERO: TITULO POR LINHA (GSAP SplitText, uma vez, no load) ---------- */
-  if (hasGSAP && hasSplitText && !prefersReducedMotion) {
-    var heroH1 = document.querySelector('.hero h1');
-    if (heroH1) {
-      heroH1.style.animation = 'none'; // a CSS keyframe fica só de fallback
-      SplitText.create(heroH1, {
-        type: 'lines',
-        linesClass: 'line',
-        onSplit: function (self) {
-          gsap.set(self.lines, { opacity: 0, y: '100%' });
-          return gsap.to(self.lines, {
-            opacity: 1,
-            y: '0%',
-            duration: 1,
-            ease: 'power4.out',
-            stagger: 0.12,
-            delay: 0.3,
-          });
-        },
-      });
-    }
   }
 
   /* ---------- DECODIFICACAO (ScrambleText) NOS RÓTULOS CURTOS ---------- */
