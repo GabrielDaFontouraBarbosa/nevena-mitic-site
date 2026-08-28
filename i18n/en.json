@@ -1,6 +1,7 @@
 {
   "nav": {
     "historia": "Story",
+    "fotos": "Photos",
     "midia": "In the media",
     "contato": "Contact"
   },
@@ -13,7 +14,7 @@
   "intro": {
     "title": "A story of two decades of silence — and the decision to finally speak.",
     "p1": "At 21, Nevena trusted the promise of a better future outside Serbia. What she found was captivity and exploitation — an experience it would take her more than twenty years to speak about out loud.",
-    "p2": "Today she brings her story to TV programs, stages, and conversations with other survivors, with one simple goal: to show that it is possible to rebuild an entire life after its worst chapter."
+    "p2": "Today she brings her story to TV programs, stages, and conversations with other survivors, with one simple goal: turning pain into medicine, showing that it is possible to rebuild an entire life after its worst chapter."
   },
   "historia": {
     "label": "The story",
@@ -39,6 +40,20 @@
     "imgAlt": "Nevena Mitić giving testimony",
     "text": "It was an old dream I had been holding onto for a long time — and it was finally coming true.",
     "cite": "— From a video testimony"
+  },
+  "fotos": {
+    "label": "Photos",
+    "prevAria": "Previous photo",
+    "nextAria": "Next photo",
+    "expandAria": "Expand photo",
+    "closeAria": "Close",
+    "photo1": { "alt": "Nevena Mitić on stage, arm outstretched, under stage lighting", "caption": "On stage" },
+    "photo2": { "alt": "Nevena Mitić on stage, beside a chair wrapped in cables", "caption": "On stage, theater" },
+    "photo3": { "alt": "Nevena Mitić on a panel discussion with two other women", "caption": "Panel discussion" },
+    "photo4": { "alt": "Portrait of Nevena Mitić with her hands raised", "caption": "Portrait" },
+    "photo5": { "alt": "Nevena Mitić performing, crouched with hands crossed", "caption": "Performance" },
+    "photo6": { "alt": "Nevena Mitić during an interview with Insajder", "caption": "Interview · Insajder" },
+    "photo7": { "alt": "Poster for the play \"I Won't Let My Story Die\", starring Nevena Mitić, at Teatro Cacilda Becker", "caption": "Poster · Teatro Cacilda Becker" }
   },
   "midia": {
     "label": "In the media",
@@ -87,6 +102,15 @@
   },
   "cta": {
     "title": "For interviews, talks, or support for other survivors.",
+    "available": {
+      "label": "Available for",
+      "item1": "International conferences",
+      "item2": "Advocacy events",
+      "item3": "Awareness campaigns",
+      "item4": "Panels and roundtables",
+      "item5": "Interviews and podcasts",
+      "item6": "Public speaking"
+    },
     "email": "Email",
     "write": "Write →",
     "instagram": "Instagram",

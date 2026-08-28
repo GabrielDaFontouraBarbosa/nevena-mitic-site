@@ -304,7 +304,10 @@
     }, obj);
   }
 
+  var activeDict = null;
+
   function applyTranslations(dict) {
+    activeDict = dict;
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
       var value = getNested(dict, key);
@@ -314,6 +317,11 @@
       var key = el.getAttribute('data-i18n-alt');
       var value = getNested(dict, key);
       if (value) el.setAttribute('alt', value);
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-aria');
+      var value = getNested(dict, key);
+      if (value) el.setAttribute('aria-label', value);
     });
     document.documentElement.lang = currentLangToHtmlLang(dict.__lang);
   }
@@ -381,6 +389,157 @@
       loadLang(btn.getAttribute('data-lang'));
     });
   });
+
+  /* ---------- FOTOS: CARROSSEL + LIGHTBOX ---------- */
+  var fotosThumbs = Array.prototype.slice.call(document.querySelectorAll('.fotos-thumb'));
+  var totalFotos = fotosThumbs.length;
+
+  if (totalFotos > 0) {
+    var fotosMainImg = document.getElementById('fotosMainImg');
+    var fotosCaption = document.getElementById('fotosCaption');
+    var fotosCurrentEl = document.getElementById('fotosCurrent');
+    var fotosTotalEl = document.getElementById('fotosTotal');
+    var fotosPrevBtn = document.getElementById('fotosPrev');
+    var fotosNextBtn = document.getElementById('fotosNext');
+    var fotosExpandBtn = document.getElementById('fotosExpand');
+    var fotosMain = document.getElementById('fotosMain');
+
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxCaption = document.getElementById('lightboxCaption');
+    var lightboxCurrentEl = document.getElementById('lightboxCurrent');
+    var lightboxTotalEl = document.getElementById('lightboxTotal');
+    var lightboxPrevBtn = document.getElementById('lightboxPrev');
+    var lightboxNextBtn = document.getElementById('lightboxNext');
+    var lightboxCloseBtn = document.getElementById('lightboxClose');
+    var lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+    if (fotosTotalEl) fotosTotalEl.textContent = String(totalFotos);
+    if (lightboxTotalEl) lightboxTotalEl.textContent = String(totalFotos);
+
+    var fotosIndex = 0;
+    var lightboxOpen = false;
+
+    function fotoSrc(index) { return 'assets/fotos/foto-' + (index + 1) + '.jpg'; }
+    function fotoAltKey(index) { return 'fotos.photo' + (index + 1) + '.alt'; }
+    function fotoCaptionKey(index) { return 'fotos.photo' + (index + 1) + '.caption'; }
+    function fotoText(key) { return activeDict ? getNested(activeDict, key) : null; }
+
+    function setThumbsActive(index) {
+      fotosThumbs.forEach(function (thumb, i) {
+        thumb.classList.toggle('is-active', i === index);
+      });
+    }
+
+    function renderMain(index) {
+      fotosIndex = index;
+      var alt = fotoText(fotoAltKey(index)) || '';
+      var cap = fotoText(fotoCaptionKey(index)) || '';
+      fotosMainImg.setAttribute('data-i18n-alt', fotoAltKey(index));
+      if (fotosCaption) fotosCaption.setAttribute('data-i18n', fotoCaptionKey(index));
+      if (fotosCurrentEl) fotosCurrentEl.textContent = String(index + 1);
+      setThumbsActive(index);
+
+      var swap = function () {
+        fotosMainImg.src = fotoSrc(index);
+        fotosMainImg.alt = alt;
+        if (fotosCaption) fotosCaption.textContent = cap;
+        fotosMainImg.classList.remove('is-fading');
+      };
+      if (prefersReducedMotion) {
+        swap();
+      } else {
+        fotosMainImg.classList.add('is-fading');
+        window.setTimeout(swap, 220);
+      }
+    }
+
+    function goToMain(index) {
+      renderMain(((index % totalFotos) + totalFotos) % totalFotos);
+    }
+
+    if (fotosPrevBtn) fotosPrevBtn.addEventListener('click', function () { goToMain(fotosIndex - 1); });
+    if (fotosNextBtn) fotosNextBtn.addEventListener('click', function () { goToMain(fotosIndex + 1); });
+    fotosThumbs.forEach(function (thumb, i) {
+      thumb.addEventListener('click', function () { goToMain(i); });
+    });
+
+    function renderLightbox(index) {
+      var alt = fotoText(fotoAltKey(index)) || '';
+      var cap = fotoText(fotoCaptionKey(index)) || '';
+      lightboxImg.setAttribute('data-i18n-alt', fotoAltKey(index));
+      if (lightboxCaption) lightboxCaption.setAttribute('data-i18n', fotoCaptionKey(index));
+      lightboxImg.src = fotoSrc(index);
+      lightboxImg.alt = alt;
+      if (lightboxCaption) lightboxCaption.textContent = cap;
+      if (lightboxCurrentEl) lightboxCurrentEl.textContent = String(index + 1);
+    }
+
+    function openLightbox(index) {
+      lightboxOpen = true;
+      renderLightbox(index);
+      document.body.classList.add('lightbox-open');
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      if (lenis) lenis.stop();
+      if (lightboxCloseBtn) lightboxCloseBtn.focus();
+    }
+
+    function closeLightbox() {
+      if (!lightboxOpen) return;
+      lightboxOpen = false;
+      document.body.classList.remove('lightbox-open');
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      if (lenis) lenis.start();
+      if (fotosExpandBtn) fotosExpandBtn.focus();
+    }
+
+    function navLightbox(delta) {
+      fotosIndex = ((fotosIndex + delta) % totalFotos + totalFotos) % totalFotos;
+      renderLightbox(fotosIndex);
+      renderMain(fotosIndex);
+    }
+
+    if (fotosExpandBtn) fotosExpandBtn.addEventListener('click', function () { openLightbox(fotosIndex); });
+    if (fotosMainImg) fotosMainImg.addEventListener('click', function () { openLightbox(fotosIndex); });
+    if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+    if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+    if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', function () { navLightbox(-1); });
+    if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', function () { navLightbox(1); });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightboxOpen) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') navLightbox(-1);
+      else if (e.key === 'ArrowRight') navLightbox(1);
+    });
+
+    /* swipe (mobile) para o carrossel principal e para o lightbox */
+    function addSwipe(el, onLeft, onRight) {
+      if (!el) return;
+      var startX = 0, startY = 0, tracking = false;
+      el.addEventListener('touchstart', function (e) {
+        var t = e.changedTouches[0];
+        startX = t.clientX; startY = t.clientY; tracking = true;
+      }, { passive: true });
+      el.addEventListener('touchend', function (e) {
+        if (!tracking) return;
+        tracking = false;
+        var t = e.changedTouches[0];
+        var dx = t.clientX - startX;
+        var dy = t.clientY - startY;
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+        if (dx < 0) onLeft(); else onRight();
+      }, { passive: true });
+    }
+    addSwipe(fotosMain, function () { goToMain(fotosIndex + 1); }, function () { goToMain(fotosIndex - 1); });
+    addSwipe(document.querySelector('.lightbox-figure'), function () { navLightbox(1); }, function () { navLightbox(-1); });
+
+    // slide 0 já vem correto no HTML (mesmo texto que o dicionário pt vai
+    // aplicar); evita sobrescrever com alt/caption vazios antes do fetch do
+    // i18n resolver.
+  }
 
   loadLang(detectInitialLang());
 })();

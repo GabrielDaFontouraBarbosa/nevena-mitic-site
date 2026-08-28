@@ -1,6 +1,7 @@
 {
   "nav": {
     "historia": "História",
+    "fotos": "Fotos",
     "midia": "Na mídia",
     "contato": "Contato"
   },
@@ -13,7 +14,7 @@
   "intro": {
     "title": "Uma história de duas décadas de silêncio — e a decisão de finalmente falar.",
     "p1": "Aos 21 anos, Nevena confiou na promessa de um futuro melhor fora da Sérvia. O que encontrou foi cativeiro e exploração — uma experiência que levaria mais de vinte anos para conseguir contar em voz alta.",
-    "p2": "Hoje ela leva sua história a programas de TV, palcos e conversas com outras sobreviventes, com um objetivo simples: mostrar que é possível reconstruir uma vida inteira depois do pior capítulo dela."
+    "p2": "Hoje ela leva sua história a programas de TV, palcos e conversas com outras sobreviventes, com um objetivo simples: transformar a dor em remédio, mostrando que é possível reconstruir uma vida inteira depois do pior capítulo dela."
   },
   "historia": {
     "label": "A história",
@@ -39,6 +40,20 @@
     "imgAlt": "Nevena Mitić em depoimento",
     "text": "Era um sonho antigo que eu guardava há muito tempo — e finalmente estava se realizando.",
     "cite": "— De um depoimento em vídeo"
+  },
+  "fotos": {
+    "label": "Fotos",
+    "prevAria": "Foto anterior",
+    "nextAria": "Próxima foto",
+    "expandAria": "Expandir foto",
+    "closeAria": "Fechar",
+    "photo1": { "alt": "Nevena Mitić em cena, com o braço estendido, sob luz de palco", "caption": "No palco" },
+    "photo2": { "alt": "Nevena Mitić no palco, ao lado de uma cadeira envolta em fios", "caption": "Em cena, teatro" },
+    "photo3": { "alt": "Nevena Mitić em mesa de debate com outras duas mulheres", "caption": "Mesa de debate" },
+    "photo4": { "alt": "Retrato de Nevena Mitić com as mãos erguidas", "caption": "Retrato" },
+    "photo5": { "alt": "Nevena Mitić em performance, agachada com as mãos cruzadas", "caption": "Performance" },
+    "photo6": { "alt": "Nevena Mitić durante entrevista ao canal Insajder", "caption": "Entrevista · Insajder" },
+    "photo7": { "alt": "Cartaz da peça \"Eu não vou deixar a minha história morrer\", com Nevena Mitić, no Teatro Cacilda Becker", "caption": "Cartaz · Teatro Cacilda Becker" }
   },
   "midia": {
     "label": "Na mídia",
@@ -87,6 +102,15 @@
   },
   "cta": {
     "title": "Para entrevistas, palestras ou apoio a outras sobreviventes.",
+    "available": {
+      "label": "Disponível para",
+      "item1": "Conferências internacionais",
+      "item2": "Eventos de advocacy",
+      "item3": "Campanhas de conscientização",
+      "item4": "Painéis e mesas-redondas",
+      "item5": "Entrevistas e podcasts",
+      "item6": "Palestras"
+    },
     "email": "E-mail",
     "write": "Escrever →",
     "instagram": "Instagram",

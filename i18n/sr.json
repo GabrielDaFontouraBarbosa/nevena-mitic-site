@@ -1,6 +1,7 @@
 {
   "nav": {
     "historia": "Priča",
+    "fotos": "Fotografije",
     "midia": "U medijima",
     "contato": "Kontakt"
   },
@@ -13,7 +14,7 @@
   "intro": {
     "title": "Priča o dve decenije ćutanja — i odluci da konačno progovori.",
     "p1": "Sa 21 godinom, Nevena je poverovala obećanju boljeg života van Srbije. Ono što je pronašla bilo je zarobljeništvo i eksploatacija — iskustvo o kome joj je trebalo više od dvadeset godina da progovori naglas.",
-    "p2": "Danas svoju priču iznosi na televiziji, na binama i u razgovorima sa drugim preživelima, sa jednim jednostavnim ciljem: da pokaže da je moguće ponovo izgraditi ceo život posle najtežeg poglavlja."
+    "p2": "Danas svoju priču iznosi na televiziji, na binama i u razgovorima sa drugim preživelima, sa jednim jednostavnim ciljem: da pretvori bol u lek, pokazujući da je moguće ponovo izgraditi ceo život posle najtežeg poglavlja."
   },
   "historia": {
     "label": "Priča",
@@ -39,6 +40,20 @@
     "imgAlt": "Nevena Mitić daje izjavu",
     "text": "Bio je to stari san koji sam dugo čuvala — i konačno se ostvarivao.",
     "cite": "— Iz video-izjave"
+  },
+  "fotos": {
+    "label": "Fotografije",
+    "prevAria": "Prethodna fotografija",
+    "nextAria": "Sledeća fotografija",
+    "expandAria": "Proširi fotografiju",
+    "closeAria": "Zatvori",
+    "photo1": { "alt": "Nevena Mitić na sceni, ispružene ruke, u svetlu reflektora", "caption": "Na sceni" },
+    "photo2": { "alt": "Nevena Mitić na sceni, pored stolice omotane kablovima", "caption": "Na sceni, pozorište" },
+    "photo3": { "alt": "Nevena Mitić na tribini sa još dve žene", "caption": "Tribina" },
+    "photo4": { "alt": "Portret Nevene Mitić sa podignutim rukama", "caption": "Portret" },
+    "photo5": { "alt": "Nevena Mitić u performansu, čučeći sa ukrštenim rukama", "caption": "Performans" },
+    "photo6": { "alt": "Nevena Mitić tokom intervjua za Insajder", "caption": "Intervju · Insajder" },
+    "photo7": { "alt": "Plakat predstave „Neću dozvoliti da moja priča umre” sa Nevenom Mitić, Pozorište Cacilda Becker", "caption": "Plakat · Pozorište Cacilda Becker" }
   },
   "midia": {
     "label": "U medijima",
@@ -87,6 +102,15 @@
   },
   "cta": {
     "title": "Za intervjue, predavanja ili podršku drugim preživelima.",
+    "available": {
+      "label": "Dostupna za",
+      "item1": "Međunarodne konferencije",
+      "item2": "Advokacijske događaje",
+      "item3": "Kampanje podizanja svesti",
+      "item4": "Panele i okrugle stolove",
+      "item5": "Intervjue i podkaste",
+      "item6": "Javne nastupe"
+    },
     "email": "Imejl",
     "write": "Napiši →",
     "instagram": "Instagram",

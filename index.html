@@ -25,6 +25,7 @@
   <div class="nav-desktop">
     <ul>
       <li><a href="#historia" data-i18n="nav.historia">História</a></li>
+      <li><a href="#fotos" data-i18n="nav.fotos">Fotos</a></li>
       <li><a href="#midia" data-i18n="nav.midia">Na mídia</a></li>
       <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
     </ul>
@@ -43,6 +44,7 @@
 <div class="nav-panel" id="navPanel">
   <ul>
     <li><a href="#historia" data-i18n="nav.historia">História</a></li>
+    <li><a href="#fotos" data-i18n="nav.fotos">Fotos</a></li>
     <li><a href="#midia" data-i18n="nav.midia">Na mídia</a></li>
     <li><a href="#contato" data-i18n="nav.contato">Contato</a></li>
   </ul>
@@ -94,7 +96,7 @@
     <h2 class="reveal" data-i18n="intro.title">Uma história de duas décadas de silêncio — e a decisão de finalmente falar.</h2>
     <div class="intro-text">
       <p class="reveal" data-i18n="intro.p1">Aos 21 anos, Nevena confiou na promessa de um futuro melhor fora da Sérvia. O que encontrou foi cativeiro e exploração — uma experiência que levaria mais de vinte anos para conseguir contar em voz alta.</p>
-      <p class="reveal" data-i18n="intro.p2">Hoje ela leva sua história a programas de TV, palcos e conversas com outras sobreviventes, com um objetivo simples: mostrar que é possível reconstruir uma vida inteira depois do pior capítulo dela.</p>
+      <p class="reveal" data-i18n="intro.p2">Hoje ela leva sua história a programas de TV, palcos e conversas com outras sobreviventes, com um objetivo simples: transformar a dor em remédio, mostrando que é possível reconstruir uma vida inteira depois do pior capítulo dela.</p>
     </div>
   </div>
 </section>
@@ -143,7 +145,7 @@
 <section class="quote-section reveal">
   <div class="quote-grid">
     <div class="quote-img-wrap">
-      <img src="assets/citacao.jpg" alt="Nevena Mitić em depoimento" loading="lazy" width="2400" height="1080" data-i18n-alt="quote.imgAlt">
+      <img src="assets/citacao.jpg" alt="Nevena Mitić em depoimento" loading="lazy" width="2400" height="790" data-i18n-alt="quote.imgAlt">
     </div>
     <div class="quote-text">
       <div class="quote-mark display">"</div>
@@ -152,6 +154,69 @@
     </div>
   </div>
 </section>
+
+<section class="fotos" id="fotos">
+  <div class="section-label reveal" data-i18n="fotos.label">Fotos</div>
+  <div class="fotos-carousel reveal" id="fotosCarousel">
+    <div class="fotos-main" id="fotosMain">
+      <img id="fotosMainImg" src="assets/fotos/foto-1.jpg" alt="Nevena Mitić em cena, com o braço estendido, sob luz de palco" data-i18n-alt="fotos.photo1.alt">
+      <div class="fotos-chyron">
+        <span class="caption" id="fotosCaption" data-i18n="fotos.photo1.caption">No palco</span>
+      </div>
+      <button type="button" class="fotos-expand" id="fotosExpand" aria-label="Expandir foto" data-i18n-aria="fotos.expandAria">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M1 5.5V1h4.5M14 5.5V1H9.5M1 9.5V14h4.5M14 9.5V14H9.5" stroke="currentColor" stroke-width="1.2"/></svg>
+      </button>
+      <div class="fotos-counter"><span id="fotosCurrent">1</span> / <span id="fotosTotal">7</span></div>
+    </div>
+    <button type="button" class="fotos-arrow fotos-arrow--prev" id="fotosPrev" aria-label="Foto anterior" data-i18n-aria="fotos.prevAria">
+      <svg width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M8 1 1.5 7.5 8 14" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+    </button>
+    <button type="button" class="fotos-arrow fotos-arrow--next" id="fotosNext" aria-label="Próxima foto" data-i18n-aria="fotos.nextAria">
+      <svg width="9" height="15" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1 1 7.5 7.5 1 14" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+    </button>
+  </div>
+  <div class="fotos-thumbs reveal" id="fotosThumbs">
+    <button type="button" class="fotos-thumb is-active" data-index="0" aria-label="1">
+      <img src="assets/fotos/foto-1.jpg" alt="" loading="lazy">
+    </button>
+    <button type="button" class="fotos-thumb" data-index="1" aria-label="2">
+      <img src="assets/fotos/foto-2.jpg" alt="" loading="lazy">
+    </button>
+    <button type="button" class="fotos-thumb" data-index="2" aria-label="3">
+      <img src="assets/fotos/foto-3.jpg" alt="" loading="lazy">
+    </button>
+    <button type="button" class="fotos-thumb" data-index="3" aria-label="4">
+      <img src="assets/fotos/foto-4.jpg" alt="" loading="lazy">
+    </button>
+    <button type="button" class="fotos-thumb" data-index="4" aria-label="5">
+      <img src="assets/fotos/foto-5.jpg" alt="" loading="lazy">
+    </button>
+    <button type="button" class="fotos-thumb" data-index="5" aria-label="6">
+      <img src="assets/fotos/foto-6.jpg" alt="" loading="lazy">
+    </button>
+    <button type="button" class="fotos-thumb" data-index="6" aria-label="7">
+      <img src="assets/fotos/foto-7.jpg" alt="" loading="lazy">
+    </button>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Fechar" data-i18n-aria="fotos.closeAria">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1 1l14 14M15 1 1 15" stroke="currentColor" stroke-width="1.3"/></svg>
+  </button>
+  <button type="button" class="lightbox-arrow lightbox-arrow--prev" id="lightboxPrev" aria-label="Foto anterior" data-i18n-aria="fotos.prevAria">
+    <svg width="11" height="19" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M8 1 1.5 7.5 8 14" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+  </button>
+  <figure class="lightbox-figure">
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <figcaption class="lightbox-caption caption" id="lightboxCaption"></figcaption>
+  </figure>
+  <button type="button" class="lightbox-arrow lightbox-arrow--next" id="lightboxNext" aria-label="Próxima foto" data-i18n-aria="fotos.nextAria">
+    <svg width="11" height="19" viewBox="0 0 9 15" fill="none" aria-hidden="true"><path d="M1 1 7.5 7.5 1 14" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+  </button>
+  <div class="lightbox-counter"><span id="lightboxCurrent">1</span> / <span id="lightboxTotal">7</span></div>
+</div>
 
 <section class="midia" id="midia">
   <div class="section-label reveal" data-i18n="midia.label">Na mídia</div>
@@ -234,6 +299,14 @@
   <div class="cta-inner">
     <div>
       <h2 data-i18n="cta.title">Para entrevistas, palestras ou apoio a outras sobreviventes.</h2>
+      <ul class="cta-available">
+        <li data-i18n="cta.available.item1">Conferências internacionais</li>
+        <li data-i18n="cta.available.item2">Eventos de advocacy</li>
+        <li data-i18n="cta.available.item3">Campanhas de conscientização</li>
+        <li data-i18n="cta.available.item4">Painéis e mesas-redondas</li>
+        <li data-i18n="cta.available.item5">Entrevistas e podcasts</li>
+        <li data-i18n="cta.available.item6">Palestras</li>
+      </ul>
       <a class="btn-primary" href="mailto:Nevenamitich@gmail.com">
         <span data-i18n="cta.email">E-mail</span><span data-i18n="cta.write">Escrever →</span>
       </a>
