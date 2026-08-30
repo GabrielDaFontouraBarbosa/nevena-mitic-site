@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nevena Mitić — A história</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,680;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrambleTextPlugin.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/CustomEase.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.3.26/dist/lenis.min.js" defer></script>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="nav-bg" id="navBg"></div>
+<nav>
+  <div class="brand"><a href="index.html" style="text-decoration:none; color:inherit;">Nevena Mitić</a></div>
+  <div class="nav-desktop">
+    <ul>
+      <li><a href="index.html#historia" data-i18n="nav.historia">História</a></li>
+      <li><a href="index.html#fotos" data-i18n="nav.fotos">Fotos</a></li>
+      <li><a href="index.html#midia" data-i18n="nav.midia">Na mídia</a></li>
+      <li><a href="index.html#contato" data-i18n="nav.contato">Contato</a></li>
+    </ul>
+    <div class="lang-switch" id="langSwitch">
+      <button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">PT</button>
+      <button type="button" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+      <button type="button" data-lang="ru" aria-label="Русский" aria-pressed="false">RU</button>
+      <button type="button" data-lang="sr" aria-label="Srpski" aria-pressed="false">SR</button>
+    </div>
+  </div>
+  <button type="button" class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navPanel">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-scrim" id="navScrim"></div>
+<div class="nav-panel" id="navPanel">
+  <ul>
+    <li><a href="index.html#historia" data-i18n="nav.historia">História</a></li>
+    <li><a href="index.html#fotos" data-i18n="nav.fotos">Fotos</a></li>
+    <li><a href="index.html#midia" data-i18n="nav.midia">Na mídia</a></li>
+    <li><a href="index.html#contato" data-i18n="nav.contato">Contato</a></li>
+  </ul>
+  <div class="lang-switch">
+    <button type="button" data-lang="pt" aria-label="Português" aria-pressed="true">PT</button>
+    <button type="button" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+    <button type="button" data-lang="ru" aria-label="Русский" aria-pressed="false">RU</button>
+    <button type="button" data-lang="sr" aria-label="Srpski" aria-pressed="false">SR</button>
+  </div>
+</div>
+
+<section class="story-page">
+  <div class="section-label reveal" data-i18n="storyTeaser.label">My story</div>
+  <h1 class="story-page-title display reveal" data-i18n="story.title">A STORY THAT DESERVES TO BE HEARD.</h1>
+  <blockquote class="story-page-lines reveal">
+    <span data-i18n="storyTeaser.line1">There are stories that are difficult to tell.</span>
+    <span data-i18n="storyTeaser.line2">There are stories that take years to find a voice.</span>
+    <span data-i18n="storyTeaser.line3">And there are stories that, once spoken, can become a source of strength for others.</span>
+    <span class="story-teaser-climax display" data-i18n="storyTeaser.line4">This is mine.</span>
+  </blockquote>
+
+  <!-- TEXTO PENDENTE: a ser escrito pela Nevena -->
+
+  <p class="story-pending-note reveal" data-i18n="story.pendingNote">The full story is being written and will be published here soon.</p>
+  <a class="btn-scroll story-back-link reveal" href="index.html" data-i18n="story.backLink">← Back home</a>
+</section>
+
+<footer>
+  <span>© Nevena Mitić</span>
+  <span data-i18n="footer.country">Sérvia</span>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

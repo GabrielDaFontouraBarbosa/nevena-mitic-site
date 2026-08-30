@@ -1,15 +1,27 @@
 {
+  "_i18n_review_notice": "ZA PROVERU: automatski prevod. Novi ključevi (splash, whoiam, storyTeaser, message, speaking, forOrgs, advocacy, midia.card6, midia.card7, kao i novi ključevi u hero: h1Line1, h1Line2, sub, ctaPrimary, ctaSecondary) prevedeni su sa engleskog teksta koji je napisala sama Nevena — ne objavljivati bez provere izvornog govornika. Ostatak fajla je već provereni sadržaj i ne odnosi se na ovo upozorenje.",
   "nav": {
     "historia": "Priča",
     "fotos": "Fotografije",
     "midia": "U medijima",
     "contato": "Kontakt"
   },
+  "splash": {
+    "ariaLabel": "Uvod",
+    "line1": "Postoje priče koje je teško ispričati.",
+    "line2": "Postoje priče kojima je potrebno godinama da pronađu glas.",
+    "line3": "I postoje priče koje, kada se izgovore, mogu postati izvor snage za druge.",
+    "line4": "Ovo je moja.",
+    "skip": "Preskoči"
+  },
   "hero": {
     "eyebrow": "Preživela · Glas · Svedok",
-    "tagline": "„Više od dvadeset godina čuvala sam ovu priču u tišini. Danas biram da je ispričam — ne kao žrtva, već kao neko ko je to prošao i vratio se.”",
-    "imgAlt": "Nevena Mitić",
-    "cta": "Upoznaj priču ↓"
+    "h1Line1": "OD PREŽIVLJAVANJA DO SNAGE.",
+    "h1Line2": "OD TIŠINE DO UTICAJA.",
+    "sub": "Priča o otpornosti, transformaciji i moći da se ponovo izgradi život — i inspiriše druge da poveruju u sopstvenu snagu.",
+    "ctaPrimary": "MOJA PRIČA →",
+    "ctaSecondary": "POZOVITE ME DA GOVORIM →",
+    "imgAlt": "Nevena Mitić"
   },
   "intro": {
     "title": "Priča o dve decenije ćutanja — i odluci da konačno progovori.",
@@ -36,10 +48,25 @@
       "text": "Odluka da prekine tišinu — intervjui, predavanja i izbor da sebe vidi kao preživelu, a ne kao žrtvu."
     }
   },
-  "quote": {
-    "imgAlt": "Nevena Mitić daje izjavu",
-    "text": "Bio je to stari san koji sam dugo čuvala — i konačno se ostvarivao.",
-    "cite": "— Iz video-izjave"
+  "whoiam": {
+    "label": "Ko sam ja",
+    "title": "JA SAM VIŠE OD SVOJE PRIČE.",
+    "p1": "Moj život me je proveo kroz iskustva koja su promenila način na koji vidim ljude, otpornost i ljudsku sposobnost da preživi.",
+    "p2": "Godinama sam nosila priču o kojoj je bilo teško govoriti. Danas biram da to iskustvo pretvorim u nešto smisleno.",
+    "p3": "Govorim jer verujem da deljenje priče može stvoriti razumevanje, suprotstaviti se stigmi i podsetiti nekoga da njegova prošlost ne mora da definiše budućnost.",
+    "p4": "Moje putovanje nije samo o onome što mi se dogodilo.",
+    "highlight": "Radi se o tome ko sam postala.",
+    "imgAlt": "Nevena Mitić na sceni, ispružene ruke, u toploj svetlosti reflektora"
+  },
+  "storyTeaser": {
+    "label": "Moja priča",
+    "title": "PRIČA KOJA ZASLUŽUJE DA BUDE SASLUŠANA.",
+    "line1": "Postoje priče koje je teško ispričati.",
+    "line2": "Postoje priče kojima je potrebno godinama da pronađu glas.",
+    "line3": "I postoje priče koje, kada se izgovore, mogu postati izvor snage za druge.",
+    "line4": "Ovo je moja.",
+    "cta": "PROČITAJTE MOJU CELU PRIČU →",
+    "imgAlt": "Nevena Mitić u performansu, čučeći, sa rukama podignutim ispred lica"
   },
   "fotos": {
     "label": "Fotografije",
@@ -54,6 +81,54 @@
     "photo5": { "alt": "Nevena Mitić u performansu, čučeći sa ukrštenim rukama", "caption": "Performans" },
     "photo6": { "alt": "Nevena Mitić tokom intervjua za Insajder", "caption": "Intervju · Insajder" },
     "photo7": { "alt": "Plakat predstave „Neću dozvoliti da moja priča umre” sa Nevenom Mitić, Pozorište Cacilda Becker", "caption": "Plakat · Pozorište Cacilda Becker" }
+  },
+  "message": {
+    "label": "Moja poruka",
+    "title": "PRETVARANJE ISKUSTVA U SVRHU.",
+    "resilience": { "label": "Otpornost", "text": "Ponovo izgraditi sebe posle iskustava koja su pokušala da te slome." },
+    "empowerment": { "label": "Osnaživanje", "text": "Pomoći ljudima da prepoznaju sopstvenu snagu, glas i vrednost." },
+    "breakingSilence": { "label": "Prekidanje tišine", "text": "Stvoriti prostor da teške priče budu saslušane bez stida." },
+    "hopeTransformation": { "label": "Nada i transformacija", "text": "Pokazati da bolna prošlost ne mora da odredi budućnost." },
+    "imgAlt": "Nevena Mitić na sceni, pored stolice omotane kablovima, u prigušenom svetlu"
+  },
+  "speaking": {
+    "label": "Predavanja",
+    "title": "GOVORITI SA SVRHOM.",
+    "p1": "Govorim publici o otpornosti, transformaciji, osnaživanju i hrabrosti da povratite sopstveni glas.",
+    "p2": "Moja predavanja su zasnovana na ličnom iskustvu i osmišljena da stvore povezanost, refleksiju i nadu.",
+    "formatsLabel": "Formati predavanja:",
+    "format1": "Uvodna predavanja (keynote)",
+    "format2": "Međunarodne konferencije",
+    "format3": "Paneli",
+    "format4": "Događaji NVO i institucija",
+    "format5": "Kampanje podizanja svesti",
+    "format6": "Radionice",
+    "format7": "Podkasti i intervjui",
+    "format8": "Nastupi u medijima",
+    "imgAlt": "Nevena Mitić za okruglim stolom sa još dve žene, posle predstave"
+  },
+  "forOrgs": {
+    "label": "Za organizacije",
+    "title": "ZA ORGANIZACIJE KOJE PRAVE RAZLIKU",
+    "p1": "Sarađujem sa organizacijama, NVO, institucijama, konferencijama i inicijativama koje rade na stvaranju informisanijeg, saosećajnijeg i osnaženijeg društva.",
+    "p2": "Moje lično iskustvo unosi ljudsku perspektivu u razgovore koji se često vode samo kroz statistiku, politike i institucije.",
+    "p3": "Verujem da lične priče imaju moć da stvore povezanost tamo gde statistika ne može.",
+    "availableLabel": "Dostupna sam za:",
+    "item1": "Međunarodne konferencije",
+    "item2": "Advokacijske događaje",
+    "item3": "Kampanje podizanja svesti",
+    "item4": "Inicijative usmerene na preživele",
+    "item5": "Obrazovne programe",
+    "item6": "Panele i okrugle stolove",
+    "item7": "Intervjue",
+    "item8": "Javne nastupe"
+  },
+  "advocacy": {
+    "label": "Advokacija",
+    "title": "KORISTEĆI SVOJ GLAS ZA PROMENU.",
+    "p1": "Verujem da podizanje svesti nije samo pričanje teških priča.",
+    "p2": "Radi se o promeni načina na koji društvo razume ranjivost, preživljavanje, stigmu i ljudsku otpornost.",
+    "p3": "Moj cilj je da svoj glas iskoristim da doprinesem razgovorima koji mogu stvoriti svest, razumevanje i smislenu promenu."
   },
   "midia": {
     "label": "U medijima",
@@ -79,6 +154,16 @@
       "imgAlt": "Naslovna strana teksta iz Glasa života o Neveni Mitić",
       "caption": "Glas života",
       "title": "Novinski tekst"
+    },
+    "card6": {
+      "imgAlt": "Nevena Mitić tokom TV intervjua za Insajder",
+      "caption": "Insajder",
+      "title": "TV intervju"
+    },
+    "card7": {
+      "imgAlt": "Plakat predstave „Neću dozvoliti da moja priča umre” sa Nevenom Mitić, Pozorište Cacilda Becker, Rio de Žaneiro",
+      "caption": "Pozorište Cacilda Becker · okt. 2024",
+      "title": "Neću dozvoliti da moja priča umre"
     },
     "readCue": "Pogledaj ↗",
     "readCue2": "Pročitaj tekst ↗",
@@ -120,6 +205,11 @@
     "call": "Pozovi →",
     "press": "Za medije",
     "presskit": "Medijski kit →"
+  },
+  "story": {
+    "title": "PRIČA KOJA ZASLUŽUJE DA BUDE SASLUŠANA.",
+    "backLink": "← Nazad na početnu",
+    "pendingNote": "Cela priča se piše i biće objavljena ovde uskoro."
   },
   "footer": {
     "country": "Srbija"

@@ -1,15 +1,27 @@
 {
+  "_i18n_review_notice": "REVISAR: tradução automática. As chaves novas (splash, whoiam, storyTeaser, message, speaking, forOrgs, advocacy, midia.card6, midia.card7 e as novas chaves de hero: h1Line1, h1Line2, sub, ctaPrimary, ctaSecondary) foram traduzidas a partir do inglês escrito pela própria Nevena — não publicar sem revisão de falante nativo. O restante do arquivo é conteúdo já revisado, sem relação com esta chave.",
   "nav": {
     "historia": "História",
     "fotos": "Fotos",
     "midia": "Na mídia",
     "contato": "Contato"
   },
+  "splash": {
+    "ariaLabel": "Introdução",
+    "line1": "Há histórias difíceis de contar.",
+    "line2": "Há histórias que levam anos para encontrar uma voz.",
+    "line3": "E há histórias que, uma vez contadas, podem se tornar uma fonte de força para outras pessoas.",
+    "line4": "Esta é a minha.",
+    "skip": "Pular"
+  },
   "hero": {
     "eyebrow": "Sobrevivente · Voz · Testemunha",
-    "tagline": "\"Por mais de vinte anos guardei essa história em silêncio. Hoje escolho contá-la — não como vítima, mas como alguém que atravessou e voltou.\"",
-    "imgAlt": "Nevena Mitić",
-    "cta": "Conhecer a história ↓"
+    "h1Line1": "DA SOBREVIVÊNCIA À FORÇA.",
+    "h1Line2": "DO SILÊNCIO AO IMPACTO.",
+    "sub": "Uma história de resiliência, transformação e o poder de reconstruir uma vida — e inspirar outras pessoas a acreditarem na própria força.",
+    "ctaPrimary": "MINHA HISTÓRIA →",
+    "ctaSecondary": "CONVIDE-ME PARA PALESTRAR →",
+    "imgAlt": "Nevena Mitić"
   },
   "intro": {
     "title": "Uma história de duas décadas de silêncio — e a decisão de finalmente falar.",
@@ -36,10 +48,25 @@
       "text": "A decisão de romper o silêncio — entrevistas, palestras, e a escolha de se ver como sobrevivente, não vítima."
     }
   },
-  "quote": {
-    "imgAlt": "Nevena Mitić em depoimento",
-    "text": "Era um sonho antigo que eu guardava há muito tempo — e finalmente estava se realizando.",
-    "cite": "— De um depoimento em vídeo"
+  "whoiam": {
+    "label": "Quem eu sou",
+    "title": "EU SOU MAIS DO QUE A MINHA HISTÓRIA.",
+    "p1": "Minha vida me levou por experiências que mudaram a forma como vejo as pessoas, a resiliência e a capacidade humana de sobreviver.",
+    "p2": "Por muitos anos, carreguei uma história difícil de contar. Hoje, escolho transformar essa experiência em algo com propósito.",
+    "p3": "Falo porque acredito que compartilhar uma história pode gerar compreensão, enfrentar o estigma e lembrar alguém de que o passado não precisa definir o futuro.",
+    "p4": "Minha jornada não é só sobre o que aconteceu comigo.",
+    "highlight": "É sobre quem eu me tornei.",
+    "imgAlt": "Nevena Mitić no palco, com o braço estendido, sob luz de palco quente"
+  },
+  "storyTeaser": {
+    "label": "Minha história",
+    "title": "UMA HISTÓRIA QUE MERECE SER OUVIDA.",
+    "line1": "Há histórias difíceis de contar.",
+    "line2": "Há histórias que levam anos para encontrar uma voz.",
+    "line3": "E há histórias que, uma vez contadas, podem se tornar uma fonte de força para outras pessoas.",
+    "line4": "Esta é a minha.",
+    "cta": "LER MINHA HISTÓRIA COMPLETA →",
+    "imgAlt": "Nevena Mitić em performance, agachada, com as mãos erguidas à frente do rosto"
   },
   "fotos": {
     "label": "Fotos",
@@ -54,6 +81,54 @@
     "photo5": { "alt": "Nevena Mitić em performance, agachada com as mãos cruzadas", "caption": "Performance" },
     "photo6": { "alt": "Nevena Mitić durante entrevista ao canal Insajder", "caption": "Entrevista · Insajder" },
     "photo7": { "alt": "Cartaz da peça \"Eu não vou deixar a minha história morrer\", com Nevena Mitić, no Teatro Cacilda Becker", "caption": "Cartaz · Teatro Cacilda Becker" }
+  },
+  "message": {
+    "label": "Minha mensagem",
+    "title": "TRANSFORMANDO EXPERIÊNCIA EM PROPÓSITO.",
+    "resilience": { "label": "Resiliência", "text": "Reconstruir a si mesma depois de experiências que tentaram te quebrar." },
+    "empowerment": { "label": "Empoderamento", "text": "Ajudar pessoas a reconhecer sua própria força, voz e valor." },
+    "breakingSilence": { "label": "Romper o silêncio", "text": "Criar espaço para que histórias difíceis sejam ouvidas sem vergonha." },
+    "hopeTransformation": { "label": "Esperança e transformação", "text": "Mostrar que um passado doloroso não precisa determinar o futuro." },
+    "imgAlt": "Nevena Mitić no palco, ao lado de uma cadeira envolta em fios, em luz baixa"
+  },
+  "speaking": {
+    "label": "Palestras",
+    "title": "PALESTRANDO COM PROPÓSITO.",
+    "p1": "Falo para públicos sobre resiliência, transformação, empoderamento e a coragem de retomar a própria voz.",
+    "p2": "Minhas falas são baseadas em experiência vivida e criadas para gerar conexão, reflexão e esperança.",
+    "formatsLabel": "Formatos de palestra:",
+    "format1": "Palestras principais (keynote)",
+    "format2": "Conferências internacionais",
+    "format3": "Painéis",
+    "format4": "Eventos de ONGs e instituições",
+    "format5": "Campanhas de conscientização",
+    "format6": "Workshops",
+    "format7": "Podcasts e entrevistas",
+    "format8": "Aparições na mídia",
+    "imgAlt": "Nevena Mitić em mesa-redonda com outras duas mulheres, após uma apresentação"
+  },
+  "forOrgs": {
+    "label": "Para organizações",
+    "title": "PARA ORGANIZAÇÕES QUE FAZEM A DIFERENÇA",
+    "p1": "Colaboro com organizações, ONGs, instituições, conferências e iniciativas que trabalham para construir uma sociedade mais informada, compassiva e empoderada.",
+    "p2": "Minha experiência vivida traz uma perspectiva humana para conversas que, muitas vezes, são discutidas apenas por meio de estatísticas, políticas e instituições.",
+    "p3": "Acredito que histórias pessoais têm o poder de criar conexão onde estatísticas não conseguem.",
+    "availableLabel": "Estou disponível para:",
+    "item1": "Conferências internacionais",
+    "item2": "Eventos de advocacy",
+    "item3": "Campanhas de conscientização",
+    "item4": "Iniciativas centradas em sobreviventes",
+    "item5": "Programas educacionais",
+    "item6": "Painéis e mesas-redondas",
+    "item7": "Entrevistas",
+    "item8": "Palestras públicas"
+  },
+  "advocacy": {
+    "label": "Advocacy",
+    "title": "USANDO MINHA VOZ PARA MUDAR.",
+    "p1": "Acredito que gerar conscientização não é simplesmente contar histórias difíceis.",
+    "p2": "É mudar a forma como a sociedade entende vulnerabilidade, sobrevivência, estigma e resiliência humana.",
+    "p3": "Meu objetivo é usar minha voz para contribuir com conversas capazes de gerar consciência, compreensão e mudança significativa."
   },
   "midia": {
     "label": "Na mídia",
@@ -79,6 +154,16 @@
       "imgAlt": "Capa de matéria da revista Glas života sobre Nevena Mitić",
       "caption": "Glas života",
       "title": "Reportagem impressa"
+    },
+    "card6": {
+      "imgAlt": "Nevena Mitić durante entrevista de TV ao canal Insajder",
+      "caption": "Insajder",
+      "title": "Entrevista de TV"
+    },
+    "card7": {
+      "imgAlt": "Cartaz da peça \"Eu não vou deixar a minha história morrer\", com Nevena Mitić, no Teatro Cacilda Becker, Rio de Janeiro",
+      "caption": "Teatro Cacilda Becker · Out 2024",
+      "title": "Eu não vou deixar a minha história morrer"
     },
     "readCue": "Assistir ↗",
     "readCue2": "Ler matéria ↗",
@@ -120,6 +205,11 @@
     "call": "Ligar →",
     "press": "Imprensa",
     "presskit": "Kit de mídia →"
+  },
+  "story": {
+    "title": "UMA HISTÓRIA QUE MERECE SER OUVIDA.",
+    "backLink": "← Voltar para a home",
+    "pendingNote": "A história completa está sendo escrita e será publicada aqui em breve."
   },
   "footer": {
     "country": "Sérvia"

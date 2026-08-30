@@ -5,11 +5,22 @@
     "midia": "In the media",
     "contato": "Contact"
   },
+  "splash": {
+    "ariaLabel": "Introduction",
+    "line1": "There are stories that are difficult to tell.",
+    "line2": "There are stories that take years to find a voice.",
+    "line3": "And there are stories that, once spoken, can become a source of strength for others.",
+    "line4": "This is mine.",
+    "skip": "Skip"
+  },
   "hero": {
     "eyebrow": "Survivor · Voice · Witness",
-    "tagline": "\"For over twenty years I kept this story in silence. Today I choose to tell it — not as a victim, but as someone who went through it and came back.\"",
-    "imgAlt": "Nevena Mitić",
-    "cta": "Discover the story ↓"
+    "h1Line1": "FROM SURVIVAL TO STRENGTH.",
+    "h1Line2": "FROM SILENCE TO IMPACT.",
+    "sub": "A story of resilience, transformation and the power to rebuild a life — and inspire others to believe in their own.",
+    "ctaPrimary": "MY STORY →",
+    "ctaSecondary": "INVITE ME TO SPEAK →",
+    "imgAlt": "Nevena Mitić"
   },
   "intro": {
     "title": "A story of two decades of silence — and the decision to finally speak.",
@@ -36,10 +47,25 @@
       "text": "The decision to break the silence — interviews, talks, and the choice to see herself as a survivor, not a victim."
     }
   },
-  "quote": {
-    "imgAlt": "Nevena Mitić giving testimony",
-    "text": "It was an old dream I had been holding onto for a long time — and it was finally coming true.",
-    "cite": "— From a video testimony"
+  "whoiam": {
+    "label": "Who I am",
+    "title": "I AM MORE THAN MY STORY.",
+    "p1": "My life has taken me through experiences that changed the way I see people, resilience and the human capacity to survive.",
+    "p2": "For many years, I carried a story that was difficult to speak about. Today, I choose to transform that experience into something meaningful.",
+    "p3": "I speak because I believe that sharing a story can create understanding, challenge stigma and remind someone that their past does not have to define their future.",
+    "p4": "My journey is not only about what happened to me.",
+    "highlight": "It is about who I became.",
+    "imgAlt": "Nevena Mitić on stage, arm outstretched, under warm stage lighting"
+  },
+  "storyTeaser": {
+    "label": "My story",
+    "title": "A STORY THAT DESERVES TO BE HEARD.",
+    "line1": "There are stories that are difficult to tell.",
+    "line2": "There are stories that take years to find a voice.",
+    "line3": "And there are stories that, once spoken, can become a source of strength for others.",
+    "line4": "This is mine.",
+    "cta": "READ MY FULL STORY →",
+    "imgAlt": "Nevena Mitić performing, crouched with her hands raised in front of her face"
   },
   "fotos": {
     "label": "Photos",
@@ -54,6 +80,54 @@
     "photo5": { "alt": "Nevena Mitić performing, crouched with hands crossed", "caption": "Performance" },
     "photo6": { "alt": "Nevena Mitić during an interview with Insajder", "caption": "Interview · Insajder" },
     "photo7": { "alt": "Poster for the play \"I Won't Let My Story Die\", starring Nevena Mitić, at Teatro Cacilda Becker", "caption": "Poster · Teatro Cacilda Becker" }
+  },
+  "message": {
+    "label": "My message",
+    "title": "TURNING EXPERIENCE INTO PURPOSE.",
+    "resilience": { "label": "Resilience", "text": "Rebuilding yourself after experiences that tried to break you." },
+    "empowerment": { "label": "Empowerment", "text": "Helping people recognize their own strength, voice and worth." },
+    "breakingSilence": { "label": "Breaking the silence", "text": "Creating space for difficult stories to be heard without shame." },
+    "hopeTransformation": { "label": "Hope & transformation", "text": "Showing that a painful past does not have to determine the future." },
+    "imgAlt": "Nevena Mitić on stage beside a chair wrapped in cables, dimly lit"
+  },
+  "speaking": {
+    "label": "Speaking",
+    "title": "SPEAKING WITH PURPOSE.",
+    "p1": "I speak to audiences about resilience, transformation, empowerment and the courage to reclaim your voice.",
+    "p2": "My talks are rooted in lived experience and designed to create connection, reflection and hope.",
+    "formatsLabel": "Speaking formats:",
+    "format1": "Keynote speeches",
+    "format2": "International conferences",
+    "format3": "Panels",
+    "format4": "NGO and institutional events",
+    "format5": "Awareness campaigns",
+    "format6": "Workshops",
+    "format7": "Podcasts & interviews",
+    "format8": "Media appearances",
+    "imgAlt": "Nevena Mitić at a round-table discussion with two other women after a performance"
+  },
+  "forOrgs": {
+    "label": "For organizations",
+    "title": "FOR ORGANIZATIONS MAKING A DIFFERENCE",
+    "p1": "I collaborate with organizations, NGOs, institutions, conferences and initiatives working to create a more informed, compassionate and empowered society.",
+    "p2": "My lived experience brings a human perspective to conversations that are often discussed through statistics, policies and institutions.",
+    "p3": "I believe that personal stories have the power to create connection where statistics cannot.",
+    "availableLabel": "I am available for:",
+    "item1": "International conferences",
+    "item2": "Advocacy events",
+    "item3": "Awareness campaigns",
+    "item4": "Survivor-centered initiatives",
+    "item5": "Educational programs",
+    "item6": "Panels and roundtables",
+    "item7": "Interviews",
+    "item8": "Public speaking engagements"
+  },
+  "advocacy": {
+    "label": "Advocacy",
+    "title": "USING MY VOICE FOR CHANGE.",
+    "p1": "I believe that raising awareness is not simply about telling difficult stories.",
+    "p2": "It is about changing the way society understands vulnerability, survival, stigma and human resilience.",
+    "p3": "My goal is to use my voice to contribute to conversations that can create awareness, understanding and meaningful change."
   },
   "midia": {
     "label": "In the media",
@@ -79,6 +153,16 @@
       "imgAlt": "Cover of a Glas života feature about Nevena Mitić",
       "caption": "Glas života",
       "title": "Print feature"
+    },
+    "card6": {
+      "imgAlt": "Nevena Mitić during a television interview with Insajder",
+      "caption": "Insajder",
+      "title": "TV interview"
+    },
+    "card7": {
+      "imgAlt": "Poster for the play \"I Won't Let My Story Die\", starring Nevena Mitić, at Teatro Cacilda Becker, Rio de Janeiro",
+      "caption": "Teatro Cacilda Becker · Oct 2024",
+      "title": "I Won't Let My Story Die"
     },
     "readCue": "Watch ↗",
     "readCue2": "Read feature ↗",
@@ -120,6 +204,11 @@
     "call": "Call →",
     "press": "Press",
     "presskit": "Media kit →"
+  },
+  "story": {
+    "title": "A STORY THAT DESERVES TO BE HEARD.",
+    "backLink": "← Back home",
+    "pendingNote": "The full story is being written and will be published here soon."
   },
   "footer": {
     "country": "Serbia"

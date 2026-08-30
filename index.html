@@ -16,6 +16,24 @@
 </head>
 <body>
 
+<div class="intro-overlay" id="introOverlay" role="dialog" aria-modal="true" data-i18n-aria="splash.ariaLabel" aria-label="Introduction">
+  <div class="intro-lines" aria-hidden="true">
+    <p class="intro-line" data-i18n="splash.line1" data-line="0">There are stories that are difficult to tell.</p>
+    <p class="intro-line" data-i18n="splash.line2" data-line="1">There are stories that take years to find a voice.</p>
+    <p class="intro-line" data-i18n="splash.line3" data-line="2">And there are stories that, once spoken, can become a source of strength for others.</p>
+    <p class="intro-line intro-line--climax" data-i18n="splash.line4" data-line="3">This is mine.</p>
+  </div>
+  <div class="sr-only">
+    <p data-i18n="splash.line1">There are stories that are difficult to tell.</p>
+    <p data-i18n="splash.line2">There are stories that take years to find a voice.</p>
+    <p data-i18n="splash.line3">And there are stories that, once spoken, can become a source of strength for others.</p>
+    <p data-i18n="splash.line4">This is mine.</p>
+  </div>
+  <button type="button" class="intro-skip" id="introSkip" data-i18n="splash.skip">Skip</button>
+</div>
+<noscript><style>#page{visibility:visible !important;}</style></noscript>
+
+<div id="page">
 <div class="grain" aria-hidden="true"></div>
 <div class="progress-bar" id="progressBar"></div>
 
@@ -64,9 +82,15 @@
   <div class="hero-tint2"></div>
   <div class="hero-content">
     <span class="eyebrow" data-i18n="hero.eyebrow">Sobrevivente · Voz · Testemunha</span>
-    <h1 class="display">Nevena<br>Mitić</h1>
-    <p class="tagline" data-i18n="hero.tagline">"Por mais de vinte anos guardei essa história em silêncio. Hoje escolho contá-la — não como vítima, mas como alguém que atravessou e voltou."</p>
-    <a class="btn-scroll" href="#historia" data-i18n="hero.cta">Conhecer a história ↓</a>
+    <h1 class="display">
+      <span data-i18n="hero.h1Line1">FROM SURVIVAL TO STRENGTH.</span><br>
+      <span data-i18n="hero.h1Line2">FROM SILENCE TO IMPACT.</span>
+    </h1>
+    <p class="hero-sub" data-i18n="hero.sub">A story of resilience, transformation and the power to rebuild a life — and inspire others to believe in their own.</p>
+    <div class="hero-ctas">
+      <a class="btn-scroll" href="#story-teaser" data-i18n="hero.ctaPrimary">MY STORY →</a>
+      <a class="btn-scroll btn-scroll--ghost" href="#contato" data-i18n="hero.ctaSecondary">INVITE ME TO SPEAK →</a>
+    </div>
   </div>
 </header>
 
@@ -142,15 +166,37 @@
   </div>
 </section>
 
-<section class="quote-section reveal">
+<section class="whoiam" id="whoiam">
+  <div class="section-label reveal" data-i18n="whoiam.label">Who I am</div>
+  <div class="whoiam-grid">
+    <div class="whoiam-img-wrap reveal">
+      <img src="assets/fotos/foto-1.jpg" alt="Nevena Mitić on stage, arm outstretched, under warm stage lighting" loading="lazy" width="970" height="625" data-i18n-alt="whoiam.imgAlt">
+    </div>
+    <div class="whoiam-text">
+      <h2 class="reveal" data-i18n="whoiam.title">I AM MORE THAN MY STORY.</h2>
+      <p class="reveal" data-i18n="whoiam.p1">My life has taken me through experiences that changed the way I see people, resilience and the human capacity to survive.</p>
+      <p class="reveal" data-i18n="whoiam.p2">For many years, I carried a story that was difficult to speak about. Today, I choose to transform that experience into something meaningful.</p>
+      <p class="reveal" data-i18n="whoiam.p3">I speak because I believe that sharing a story can create understanding, challenge stigma and remind someone that their past does not have to define their future.</p>
+      <p class="reveal" data-i18n="whoiam.p4">My journey is not only about what happened to me.</p>
+      <p class="whoiam-highlight display reveal" data-i18n="whoiam.highlight">It is about who I became.</p>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section reveal" id="story-teaser">
   <div class="quote-grid">
     <div class="quote-img-wrap">
-      <img src="assets/citacao.jpg" alt="Nevena Mitić em depoimento" loading="lazy" width="2400" height="790" data-i18n-alt="quote.imgAlt">
+      <img src="assets/fotos/foto-5.jpg" alt="Nevena Mitić performing, crouched with her hands raised in front of her face" loading="lazy" width="1064" height="916" data-i18n-alt="storyTeaser.imgAlt">
     </div>
     <div class="quote-text">
       <div class="quote-mark display">"</div>
-      <blockquote data-i18n="quote.text">Era um sonho antigo que eu guardava há muito tempo — e finalmente estava se realizando.</blockquote>
-      <div class="quote-cite" data-i18n="quote.cite">— De um depoimento em vídeo</div>
+      <blockquote class="story-teaser-lines">
+        <span data-i18n="storyTeaser.line1">There are stories that are difficult to tell.</span>
+        <span data-i18n="storyTeaser.line2">There are stories that take years to find a voice.</span>
+        <span data-i18n="storyTeaser.line3">And there are stories that, once spoken, can become a source of strength for others.</span>
+        <span class="story-teaser-climax display" data-i18n="storyTeaser.line4">This is mine.</span>
+      </blockquote>
+      <a class="btn-primary story-teaser-cta" href="story.html" data-i18n="storyTeaser.cta">READ MY FULL STORY →</a>
     </div>
   </div>
 </section>
@@ -218,6 +264,90 @@
   <div class="lightbox-counter"><span id="lightboxCurrent">1</span> / <span id="lightboxTotal">7</span></div>
 </div>
 
+<section class="message" id="message">
+  <div class="message-bg" aria-hidden="true">
+    <img src="assets/fotos/foto-2.jpg" alt="" loading="lazy" width="880" height="888">
+  </div>
+  <div class="section-label reveal" data-i18n="message.label">My message</div>
+  <h2 class="reveal" data-i18n="message.title">TURNING EXPERIENCE INTO PURPOSE.</h2>
+  <div class="message-grid">
+    <div class="message-pillar reveal">
+      <span class="caption" data-i18n="message.resilience.label">Resilience</span>
+      <p data-i18n="message.resilience.text">Rebuilding yourself after experiences that tried to break you.</p>
+    </div>
+    <div class="message-pillar reveal">
+      <span class="caption" data-i18n="message.empowerment.label">Empowerment</span>
+      <p data-i18n="message.empowerment.text">Helping people recognize their own strength, voice and worth.</p>
+    </div>
+    <div class="message-pillar reveal">
+      <span class="caption" data-i18n="message.breakingSilence.label">Breaking the silence</span>
+      <p data-i18n="message.breakingSilence.text">Creating space for difficult stories to be heard without shame.</p>
+    </div>
+    <div class="message-pillar reveal">
+      <span class="caption" data-i18n="message.hopeTransformation.label">Hope &amp; transformation</span>
+      <p data-i18n="message.hopeTransformation.text">Showing that a painful past does not have to determine the future.</p>
+    </div>
+  </div>
+</section>
+
+<section class="speaking" id="speaking">
+  <div class="section-label reveal" data-i18n="speaking.label">Speaking</div>
+  <div class="speaking-grid">
+    <div class="speaking-img-wrap reveal">
+      <img src="assets/fotos/foto-3.jpg" alt="Nevena Mitić at a round-table discussion with two other women after a performance" loading="lazy" width="955" height="520" data-i18n-alt="speaking.imgAlt">
+    </div>
+    <div class="speaking-text">
+      <h2 class="reveal" data-i18n="speaking.title">SPEAKING WITH PURPOSE.</h2>
+      <p class="reveal" data-i18n="speaking.p1">I speak to audiences about resilience, transformation, empowerment and the courage to reclaim your voice.</p>
+      <p class="reveal" data-i18n="speaking.p2">My talks are rooted in lived experience and designed to create connection, reflection and hope.</p>
+      <p class="speaking-formats-label caption reveal" data-i18n="speaking.formatsLabel">Speaking formats:</p>
+      <ul class="speaking-formats reveal">
+        <li data-i18n="speaking.format1">Keynote speeches</li>
+        <li data-i18n="speaking.format2">International conferences</li>
+        <li data-i18n="speaking.format3">Panels</li>
+        <li data-i18n="speaking.format4">NGO and institutional events</li>
+        <li data-i18n="speaking.format5">Awareness campaigns</li>
+        <li data-i18n="speaking.format6">Workshops</li>
+        <li data-i18n="speaking.format7">Podcasts &amp; interviews</li>
+        <li data-i18n="speaking.format8">Media appearances</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="for-orgs" id="for-organizations">
+  <div class="section-label reveal" data-i18n="forOrgs.label">For organizations</div>
+  <h2 class="reveal" data-i18n="forOrgs.title">FOR ORGANIZATIONS MAKING A DIFFERENCE</h2>
+  <div class="for-orgs-grid">
+    <div class="for-orgs-text">
+      <p class="reveal" data-i18n="forOrgs.p1">I collaborate with organizations, NGOs, institutions, conferences and initiatives working to create a more informed, compassionate and empowered society.</p>
+      <p class="reveal" data-i18n="forOrgs.p2">My lived experience brings a human perspective to conversations that are often discussed through statistics, policies and institutions.</p>
+      <p class="reveal" data-i18n="forOrgs.p3">I believe that personal stories have the power to create connection where statistics cannot.</p>
+    </div>
+    <div class="for-orgs-available">
+      <span class="caption reveal" data-i18n="forOrgs.availableLabel">I am available for:</span>
+      <ul class="cta-available reveal">
+        <li data-i18n="forOrgs.item1">International conferences</li>
+        <li data-i18n="forOrgs.item2">Advocacy events</li>
+        <li data-i18n="forOrgs.item3">Awareness campaigns</li>
+        <li data-i18n="forOrgs.item4">Survivor-centered initiatives</li>
+        <li data-i18n="forOrgs.item5">Educational programs</li>
+        <li data-i18n="forOrgs.item6">Panels and roundtables</li>
+        <li data-i18n="forOrgs.item7">Interviews</li>
+        <li data-i18n="forOrgs.item8">Public speaking engagements</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="advocacy" id="advocacy">
+  <div class="section-label reveal" data-i18n="advocacy.label">Advocacy</div>
+  <h2 class="reveal" data-i18n="advocacy.title">USING MY VOICE FOR CHANGE.</h2>
+  <p class="reveal" data-i18n="advocacy.p1">I believe that raising awareness is not simply about telling difficult stories.</p>
+  <p class="reveal" data-i18n="advocacy.p2">It is about changing the way society understands vulnerability, survival, stigma and human resilience.</p>
+  <p class="reveal" data-i18n="advocacy.p3">My goal is to use my voice to contribute to conversations that can create awareness, understanding and meaningful change.</p>
+</section>
+
 <section class="midia" id="midia">
   <div class="section-label reveal" data-i18n="midia.label">Na mídia</div>
 
@@ -276,6 +406,26 @@
         <div class="title display" data-i18n="midia.card5.title">Reportagem impressa</div>
       </div>
     </div>
+    <div class="midia-card midia-card--pending reveal">
+      <div class="midia-img">
+        <img src="assets/fotos/foto-6.jpg" alt="Nevena Mitić durante entrevista de TV ao canal Insajder" loading="lazy" width="1048" height="1027" data-i18n-alt="midia.card6.imgAlt">
+      </div>
+      <span class="midia-badge" data-i18n="midia.pending">Em breve</span>
+      <div class="midia-chyron">
+        <span class="caption" data-i18n="midia.card6.caption">Insajder</span>
+        <div class="title display" data-i18n="midia.card6.title">Entrevista de TV</div>
+      </div>
+    </div>
+    <div class="midia-card midia-card--pending reveal">
+      <div class="midia-img midia-img--plain">
+        <img src="assets/fotos/foto-7.jpg" alt="Cartaz da peça &quot;Eu não vou deixar a minha história morrer&quot;, com Nevena Mitić, no Teatro Cacilda Becker, Rio de Janeiro" loading="lazy" width="1041" height="1026" data-i18n-alt="midia.card7.imgAlt">
+      </div>
+      <span class="midia-badge" data-i18n="midia.pending">Em breve</span>
+      <div class="midia-chyron">
+        <span class="caption" data-i18n="midia.card7.caption">Teatro Cacilda Becker · Out 2024</span>
+        <div class="title display" data-i18n="midia.card7.title">Eu não vou deixar a minha história morrer</div>
+      </div>
+    </div>
   </div>
 
   <div class="press-list reveal">
@@ -325,6 +475,7 @@
   <span>© Nevena Mitić</span>
   <span data-i18n="footer.country">Sérvia</span>
 </footer>
+</div>
 
 <script src="script.js" defer></script>
 </body>

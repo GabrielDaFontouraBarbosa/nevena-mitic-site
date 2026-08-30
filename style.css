@@ -16,7 +16,7 @@ body{
   line-height:1.6;
   overflow-x:hidden;
 }
-body.nav-open, body.lightbox-open{ overflow:hidden; }
+body.nav-open, body.lightbox-open, body.intro-lock{ overflow:hidden; }
 .display{
   font-family:'Fraunces', serif;
 }
@@ -27,6 +27,90 @@ body.nav-open, body.lightbox-open{ overflow:hidden; }
   text-transform:uppercase;
 }
 a{color:inherit;}
+
+.sr-only{
+  position:absolute;
+  width:1px; height:1px;
+  padding:0; margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* ---------- INTRO CINEMATOGRÁFICA ----------
+   #page começa escondido; o próprio overlay (tabaco sólido, sempre visível
+   por padrão via CSS) cobre a tela antes mesmo do JS rodar, então não há
+   flash de branco nem de conteúdo sem estilo. O script.js decide, assim que
+   carrega: pula direto (reduced-motion / já visto na sessão) ou roda a
+   sequência e só então revela #page e remove o overlay do DOM. */
+#page{ visibility:hidden; }
+html.intro-done #page{ visibility:visible; }
+
+.intro-overlay{
+  position:fixed; inset:0;
+  z-index:500;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--tabaco);
+  overflow:hidden;
+  opacity:1;
+  transition:opacity .8s cubic-bezier(.16,1,.3,1);
+}
+.intro-overlay.is-leaving{ opacity:0; }
+.intro-lines{
+  position:relative;
+  max-width:22ch;
+  padding:0 6%;
+  text-align:center;
+}
+.intro-line{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Fraunces', serif;
+  font-weight:400;
+  font-size:clamp(1.5rem, 4vw, 2.75rem);
+  line-height:1.3;
+  color:var(--creme-claro);
+  opacity:0;
+  transform:translateY(12px);
+  transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+}
+.intro-line.is-active{
+  position:relative;
+  opacity:1;
+  transform:translateY(0);
+}
+.intro-line--climax{
+  font-weight:600;
+  font-size:clamp(1.8rem, 5vw, 3.25rem);
+  padding-bottom:1.1rem;
+  border-bottom:1px solid var(--bronze);
+  transition-duration:1.1s;
+}
+.intro-skip{
+  position:absolute;
+  right:5%; bottom:5%;
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.75rem;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--couro);
+  transition:color .25s;
+}
+.intro-skip:hover, .intro-skip:focus-visible{ color:var(--bronze); }
+
+@media (prefers-reduced-motion: reduce){
+  #page{ visibility:visible; }
+  .intro-overlay{ display:none; }
+}
 
 /* ---------- GRAIN (textura fílmica, reforça o tom documental das fotos em P&B) ---------- */
 .grain{
@@ -272,7 +356,7 @@ body.nav-open .nav-scrim{ opacity:1; pointer-events:auto; }
   letter-spacing:-0.01em;
   animation:tracking-in-expand .9s cubic-bezier(.215,.61,.355,1) .22s both;
 }
-.hero p.tagline{
+.hero-sub{
   font-family:'Fraunces', serif;
   font-style:italic;
   font-weight:400;
@@ -282,10 +366,16 @@ body.nav-open .nav-scrim{ opacity:1; pointer-events:auto; }
   color:var(--creme);
   animation:tracking-in-expand .8s cubic-bezier(.215,.61,.355,1) .42s both;
 }
+.hero-ctas{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-top:2.4rem;
+  animation:hero-reveal 1s cubic-bezier(.22,1,.36,1) .58s both;
+}
 .btn-scroll{
   position:relative;
   display:inline-flex; align-items:center; gap:0.5rem;
-  margin-top:2.4rem;
   font-family:'IBM Plex Mono', monospace;
   font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase;
   color:var(--creme-claro);
@@ -293,13 +383,22 @@ body.nav-open .nav-scrim{ opacity:1; pointer-events:auto; }
   border:1px solid rgba(247,241,227,0.35);
   padding:0.8rem 1.35rem;
   transition:border-color .25s, background .25s, transform .25s;
-  animation:hero-reveal 1s cubic-bezier(.22,1,.36,1) .58s both;
 }
 .btn-scroll:hover, .btn-scroll:focus-visible{
   border-color:var(--bronze);
   background:rgba(169,121,62,0.15);
   transform:translateY(-2px);
 }
+.btn-scroll--ghost{
+  border-color:rgba(247,241,227,0.18);
+  opacity:0.8;
+}
+.btn-scroll--ghost:hover, .btn-scroll--ghost:focus-visible{ opacity:1; }
+/* segura a animação de entrada do hero enquanto a intro roda por baixo do
+   overlay (visibility:hidden não pausa @keyframes) — só libera quando
+   html.intro-done chega, pra a entrada do hero coincidir com o cross-fade. */
+.hero .eyebrow, .hero h1, .hero-sub, .hero-ctas{ animation-play-state:paused; }
+html.intro-done .hero .eyebrow, html.intro-done .hero h1, html.intro-done .hero-sub, html.intro-done .hero-ctas{ animation-play-state:running; }
 @media (hover:hover) and (pointer:fine){
   .btn-scroll:hover, .btn-scroll:focus-visible{ transform:translateY(-3px) scale(1.02); }
 }
@@ -496,6 +595,48 @@ section[id]{
   max-width:48ch;
 }
 
+/* ---------- WHO I AM ---------- */
+.whoiam{
+  background:var(--creme-claro);
+}
+.whoiam-grid{
+  display:grid;
+  grid-template-columns:0.9fr 1.1fr;
+  gap:4rem;
+  align-items:center;
+}
+.whoiam-img-wrap{
+  overflow:hidden;
+  border:1px solid rgba(46,32,24,0.12);
+}
+.whoiam-img-wrap img{
+  width:100%; height:auto; display:block;
+  filter:grayscale(1) contrast(1.05) brightness(0.92);
+}
+.whoiam-text h2{
+  font-family:'Fraunces', serif;
+  font-weight:400;
+  font-size:clamp(1.7rem, 3vw, 2.5rem);
+  line-height:1.25;
+  color:var(--tabaco);
+  margin-bottom:1.6rem;
+}
+.whoiam-text p{
+  font-size:1.05rem;
+  color:var(--tabaco-med);
+  margin-bottom:1.1rem;
+  max-width:52ch;
+}
+.whoiam-highlight{
+  margin-top:1.4rem;
+  font-size:clamp(1.3rem, 2.2vw, 1.7rem);
+  font-style:italic;
+  color:var(--bronze);
+  border-top:1px solid rgba(169,121,62,0.3);
+  padding-top:1.2rem;
+  max-width:40ch;
+}
+
 /* ---------- QUOTE ---------- */
 .quote-section{
   background:var(--tabaco);
@@ -549,6 +690,33 @@ blockquote{
   letter-spacing:0.1em;
   text-transform:uppercase;
   color:var(--bronze);
+}
+/* My Story teaser reaproveita a marcação/mecanismo pin de .quote-section */
+.story-teaser-lines{
+  display:flex;
+  flex-direction:column;
+  gap:0.9rem;
+  max-width:20ch;
+}
+.story-teaser-lines span{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(1.1rem, 1.8vw, 1.4rem);
+  line-height:1.4;
+  color:var(--creme);
+}
+.story-teaser-climax{
+  font-style:normal;
+  font-weight:600;
+  font-size:clamp(1.6rem, 2.8vw, 2.3rem) !important;
+  color:var(--creme-claro) !important;
+  border-bottom:1px solid var(--bronze);
+  padding-bottom:0.6rem;
+  width:fit-content;
+}
+.story-teaser-cta{
+  margin-top:2.2rem;
 }
 
 /* ---------- FOTOS (galeria pessoal, separada da imprensa) ---------- */
@@ -751,6 +919,170 @@ blockquote{
   .lightbox-close{ top:0.9rem; right:0.9rem; }
 }
 
+/* ---------- MY MESSAGE ---------- */
+.message{
+  position:relative;
+  overflow:hidden;
+  background:var(--tabaco);
+  color:var(--creme-claro);
+  max-width:none;
+}
+.message-bg{
+  position:absolute; inset:0;
+  z-index:0;
+}
+.message-bg img{
+  width:100%; height:100%;
+  object-fit:cover;
+  filter:grayscale(1) contrast(1.05) brightness(0.32) blur(2px);
+}
+.message-bg::after{
+  content:'';
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(46,32,24,0.55), rgba(46,32,24,0.88));
+}
+.message .section-label, .message h2, .message-grid{
+  position:relative; z-index:1;
+}
+.message .section-label{ color:var(--creme); }
+.message .section-label::after{ background:var(--creme); opacity:0.35; }
+.message > h2{
+  font-family:'Fraunces', serif;
+  font-weight:400;
+  font-size:clamp(1.9rem, 3.6vw, 3rem);
+  line-height:1.2;
+  max-width:20ch;
+  margin-bottom:3rem;
+}
+.message-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2.4rem 3rem;
+}
+.message-pillar span{
+  color:var(--bronze);
+  display:block;
+  margin-bottom:0.6rem;
+}
+.message-pillar p{
+  font-size:1.02rem;
+  color:var(--creme);
+  opacity:0.9;
+  max-width:36ch;
+}
+
+/* ---------- SPEAKING ---------- */
+.speaking{
+  background:var(--creme-claro);
+}
+.speaking-grid{
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:4rem;
+  align-items:center;
+}
+.speaking-img-wrap{
+  overflow:hidden;
+  border:1px solid rgba(46,32,24,0.12);
+}
+.speaking-img-wrap img{
+  width:100%; height:auto; display:block;
+  filter:grayscale(1) contrast(1.08) brightness(0.95);
+}
+.speaking-text h2{
+  font-family:'Fraunces', serif;
+  font-weight:400;
+  font-size:clamp(1.7rem, 3vw, 2.5rem);
+  line-height:1.25;
+  margin-bottom:1.4rem;
+}
+.speaking-text p{
+  font-size:1.05rem;
+  color:var(--tabaco-med);
+  margin-bottom:1rem;
+  max-width:52ch;
+}
+.speaking-formats-label{
+  color:var(--couro);
+  margin-top:1.4rem;
+  display:block;
+}
+.speaking-formats{
+  display:flex; flex-wrap:wrap; gap:0.6rem;
+  list-style:none;
+  margin-top:0.8rem;
+}
+.speaking-formats li{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.7rem;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:var(--tabaco);
+  border:1px solid rgba(46,32,24,0.2);
+  border-radius:999px;
+  padding:0.5rem 0.9rem;
+  opacity:0.85;
+}
+
+/* ---------- FOR ORGANIZATIONS ---------- */
+.for-orgs{
+  background:var(--couro);
+  color:var(--creme-claro);
+}
+.for-orgs .section-label{ color:var(--creme); }
+.for-orgs .section-label::after{ background:var(--creme); opacity:0.35; }
+.for-orgs > h2{
+  font-family:'Fraunces', serif;
+  font-weight:400;
+  font-size:clamp(1.9rem, 3.6vw, 2.9rem);
+  line-height:1.2;
+  max-width:22ch;
+  margin-bottom:2.6rem;
+}
+.for-orgs-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:3rem;
+  align-items:start;
+}
+.for-orgs-text p{
+  font-size:1.05rem;
+  color:var(--creme);
+  opacity:0.92;
+  margin-bottom:1.1rem;
+  max-width:52ch;
+}
+.for-orgs-available > .caption{
+  color:var(--creme);
+  opacity:0.8;
+  display:block;
+  margin-bottom:1rem;
+}
+.for-orgs-available .cta-available li{
+  color:var(--creme-claro);
+  border-color:rgba(247,241,227,0.3);
+}
+
+/* ---------- ADVOCACY ---------- */
+.advocacy{
+  background:var(--creme-claro);
+  text-align:left;
+}
+.advocacy > h2{
+  font-family:'Fraunces', serif;
+  font-weight:400;
+  font-size:clamp(1.9rem, 3.6vw, 2.9rem);
+  line-height:1.2;
+  max-width:20ch;
+  margin-bottom:2rem;
+}
+.advocacy p{
+  font-size:1.1rem;
+  color:var(--tabaco-med);
+  max-width:58ch;
+  margin-bottom:1rem;
+}
+
 /* ---------- MIDIA ---------- */
 .midia{
   background:var(--creme-claro);
@@ -825,6 +1157,14 @@ blockquote{
 }
 .midia-card--pending .midia-img img{
   filter:grayscale(1) contrast(1.1) brightness(0.85);
+}
+/* pôster da peça já tem identidade própria (preto/dourado) — sem duotone */
+.midia-img--plain{
+  border:1px solid rgba(169,121,62,0.4);
+}
+.midia-img--plain img,
+.midia-card--pending .midia-img--plain img{
+  filter:none;
 }
 .midia-badge{
   position:absolute;
@@ -993,6 +1333,57 @@ blockquote{
 }
 .cta-links--pending span:last-child{ color:var(--bronze); }
 
+/* ---------- STORY PAGE (story.html) ---------- */
+.story-page{
+  min-height:60vh;
+  padding-top:9rem;
+}
+.story-page-title{
+  font-weight:400;
+  font-size:clamp(2rem, 4vw, 3.2rem);
+  line-height:1.15;
+  max-width:18ch;
+  margin-bottom:2.4rem;
+}
+.story-page-lines{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  max-width:26ch;
+  margin-bottom:2.2rem;
+}
+.story-page-lines span{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:clamp(1.1rem, 1.9vw, 1.4rem);
+  line-height:1.4;
+  color:var(--tabaco-med);
+}
+.story-page-lines .story-teaser-climax{
+  font-style:normal;
+  font-weight:600;
+  color:var(--tabaco) !important;
+  border-bottom:1px solid var(--bronze);
+  padding-bottom:0.5rem;
+  width:fit-content;
+}
+.story-pending-note{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:0.8rem;
+  letter-spacing:0.03em;
+  color:var(--couro);
+  max-width:44ch;
+  margin-bottom:2.6rem;
+}
+.story-back-link{
+  color:var(--tabaco);
+  border-color:rgba(46,32,24,0.25);
+}
+.story-back-link:hover, .story-back-link:focus-visible{
+  border-color:var(--bronze);
+  background:rgba(169,121,62,0.1);
+}
+
 footer{
   background:var(--tabaco);
   color:var(--creme);
@@ -1027,9 +1418,11 @@ a:focus-visible, button:focus-visible{
 }
 
 @media (max-width: 860px){
-  .intro-grid, .historia-grid, .quote-grid, .cta-inner{
+  .intro-grid, .historia-grid, .quote-grid, .cta-inner,
+  .whoiam-grid, .speaking-grid, .for-orgs-grid{
     grid-template-columns:1fr;
   }
+  .message-grid{ grid-template-columns:1fr; }
   .quote-img-wrap{ height:340px; }
   .midia-card{ flex-basis:78vw; }
   .historia-img-wrap{ position:static; top:auto; }

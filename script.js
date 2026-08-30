@@ -3,6 +3,94 @@
 
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- INTRO CINEMATOGRÁFICA ----------
+     #page fica visibility:hidden até isso terminar (ver style.css); o
+     próprio overlay, opaco por padrão, cobre a tela antes do JS rodar, então
+     não existe flash de branco nem de conteúdo sem estilo mesmo nesse
+     intervalo. Roda uma vez por sessão (sessionStorage) e nunca se
+     reduced-motion estiver ativo. Orquestração via setTimeout apenas para
+     trocar qual frase está com a classe .is-active — quem anima de fato é o
+     CSS (transition em opacity/transform). */
+  (function initIntro() {
+    var overlay = document.getElementById('introOverlay');
+    if (!overlay) return;
+
+    var introSeen = false;
+    try {
+      introSeen = sessionStorage.getItem('nm_intro_seen') === '1';
+    } catch (e) {
+      introSeen = false;
+    }
+
+    var finished = false;
+    var timers = [];
+
+    function clearTimers() {
+      timers.forEach(function (id) { window.clearTimeout(id); });
+      timers = [];
+    }
+
+    function finishIntro(immediate) {
+      if (finished) return;
+      finished = true;
+      clearTimers();
+      document.removeEventListener('keydown', onKeydown);
+      overlay.removeEventListener('click', finishIntro);
+      document.documentElement.classList.add('intro-done');
+      document.body.classList.remove('intro-lock');
+      var remove = function () {
+        if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+      };
+      if (immediate || prefersReducedMotion) {
+        // já visto nesta sessão ou reduced-motion: nunca chega a mostrar o
+        // overlay, então também não faz sentido animar a saída dele.
+        remove();
+      } else {
+        overlay.classList.add('is-leaving');
+        timers.push(window.setTimeout(remove, 850));
+      }
+      try { sessionStorage.setItem('nm_intro_seen', '1'); } catch (e) {}
+    }
+
+    function onKeydown(e) {
+      if (e.key === 'Escape' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        finishIntro();
+      }
+    }
+
+    if (prefersReducedMotion || introSeen) {
+      finishIntro(true);
+      return;
+    }
+
+    document.body.classList.add('intro-lock');
+    var lines = Array.prototype.slice.call(overlay.querySelectorAll('.intro-line'));
+    var visibleFor = [2200, 2200, 2200, 3000];
+    var fadeGap = 800;
+
+    function showLine(index) {
+      lines.forEach(function (line, i) { line.classList.toggle('is-active', i === index); });
+      if (index < lines.length - 1) {
+        timers.push(window.setTimeout(function () {
+          lines[index].classList.remove('is-active');
+        }, visibleFor[index]));
+        timers.push(window.setTimeout(function () {
+          showLine(index + 1);
+        }, visibleFor[index] + fadeGap));
+      } else {
+        timers.push(window.setTimeout(finishIntro, visibleFor[index]));
+      }
+    }
+
+    showLine(0);
+
+    var skipBtn = document.getElementById('introSkip');
+    if (skipBtn) skipBtn.addEventListener('click', finishIntro);
+    overlay.addEventListener('click', finishIntro);
+    document.addEventListener('keydown', onKeydown);
+  })();
+
   /* ---------- PROGRESS BAR + FUNDO DA NAV ---------- */
   var progressBar = document.getElementById('progressBar');
   var navBg = document.getElementById('navBg');
@@ -216,7 +304,7 @@
       ticking = true;
     }
   }
-  if (!prefersReducedMotion) {
+  if (hero && heroImg && !prefersReducedMotion) {
     window.addEventListener('scroll', onScrollParallax, { passive: true });
   }
 
