@@ -610,15 +610,16 @@ section[id]{
   display:grid;
   grid-template-columns:0.9fr 1.1fr;
   gap:4rem;
-  align-items:center;
-}
-.whoiam-img-wrap{
-  overflow:hidden;
-  border:1px solid rgba(46,32,24,0.12);
+  align-items:start;
 }
 .whoiam-img-wrap img{
   width:100%; height:auto; display:block;
   filter:grayscale(1) contrast(1.05) brightness(0.92);
+}
+.whoiam-img-caption, .speaking-img-caption{
+  display:block;
+  margin-top:0.9rem;
+  color:var(--couro);
 }
 .whoiam-text h2{
   font-family:'Fraunces', serif;
@@ -948,7 +949,7 @@ blockquote{
   position:absolute; inset:0;
   background:linear-gradient(180deg, rgba(46,32,24,0.55), rgba(46,32,24,0.88));
 }
-.message .section-label, .message h2, .message-grid{
+.message .section-label, .message h2, .message-list{
   position:relative; z-index:1;
 }
 .message .section-label{ color:var(--creme); }
@@ -961,21 +962,32 @@ blockquote{
   max-width:20ch;
   margin-bottom:3rem;
 }
-.message-grid{
+/* lista tipo glossário/manifesto — não é um "feature grid" porque os 4
+   pilares não são passos de um processo, são termos que ela define */
+.message-list{
+  display:flex;
+  flex-direction:column;
+  border-bottom:1px solid rgba(247,241,227,0.18);
+}
+.message-item{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:2.4rem 3rem;
+  grid-template-columns:0.85fr 1.15fr;
+  gap:1rem 2.5rem;
+  padding:1.7rem 0;
+  border-top:1px solid rgba(247,241,227,0.18);
 }
-.message-pillar span{
+.message-item dt{
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(1.25rem, 2.1vw, 1.7rem);
   color:var(--bronze);
-  display:block;
-  margin-bottom:0.6rem;
 }
-.message-pillar p{
+.message-item dd{
   font-size:1.02rem;
   color:var(--creme);
-  opacity:0.9;
-  max-width:36ch;
+  opacity:0.92;
+  max-width:44ch;
+  align-self:center;
 }
 
 /* ---------- SPEAKING ---------- */
@@ -984,13 +996,12 @@ blockquote{
 }
 .speaking-grid{
   display:grid;
-  grid-template-columns:1fr 1.1fr;
+  grid-template-columns:1.3fr 0.9fr;
   gap:4rem;
-  align-items:center;
+  align-items:start;
 }
 .speaking-img-wrap{
-  overflow:hidden;
-  border:1px solid rgba(46,32,24,0.12);
+  margin-top:0.4rem;
 }
 .speaking-img-wrap img{
   width:100%; height:auto; display:block;
@@ -1014,21 +1025,31 @@ blockquote{
   margin-top:1.4rem;
   display:block;
 }
-.speaking-formats{
-  display:flex; flex-wrap:wrap; gap:0.6rem;
+.speaking-formats{ margin-top:0.8rem; }
+
+/* ---------- COLOPHON LIST (formatos de palestra, disponibilidade p/ orgs)
+   lista corrida separada por barra, como um colofão/crédito editorial —
+   em vez de repetir o mesmo componente de "pill" em toda seção da página. */
+.colophon-list{
+  display:flex; flex-wrap:wrap;
   list-style:none;
-  margin-top:0.8rem;
-}
-.speaking-formats li{
   font-family:'IBM Plex Mono', monospace;
-  font-size:0.7rem;
-  letter-spacing:0.05em;
+  font-size:0.76rem;
+  letter-spacing:0.04em;
   text-transform:uppercase;
-  color:var(--tabaco);
-  border:1px solid rgba(46,32,24,0.2);
-  border-radius:999px;
-  padding:0.5rem 0.9rem;
-  opacity:0.85;
+  opacity:0.9;
+}
+.colophon-list li{
+  position:relative;
+  padding-right:1.15rem;
+  margin-right:0.15rem;
+  margin-bottom:0.5rem;
+}
+.colophon-list li:not(:last-child)::after{
+  content:'/';
+  position:absolute;
+  right:0.2rem;
+  color:var(--bronze);
 }
 
 /* ---------- FOR ORGANIZATIONS ---------- */
@@ -1065,10 +1086,6 @@ blockquote{
   display:block;
   margin-bottom:1rem;
 }
-.for-orgs-available .cta-available li{
-  color:var(--creme-claro);
-  border-color:rgba(247,241,227,0.3);
-}
 
 /* ---------- ADVOCACY ---------- */
 .advocacy{
@@ -1083,10 +1100,21 @@ blockquote{
   max-width:20ch;
   margin-bottom:2rem;
 }
-.advocacy p{
-  font-size:1.1rem;
+.advocacy-pullquote{
+  font-weight:400;
+  font-style:italic;
+  font-size:clamp(1.6rem, 3.2vw, 2.4rem);
+  line-height:1.35;
+  color:var(--tabaco);
+  max-width:26ch;
+  margin-bottom:2.4rem;
+  padding-left:1.4rem;
+  border-left:2px solid var(--bronze);
+}
+.advocacy-body p{
+  font-size:1.05rem;
   color:var(--tabaco-med);
-  max-width:58ch;
+  max-width:54ch;
   margin-bottom:1rem;
 }
 
@@ -1429,7 +1457,7 @@ a:focus-visible, button:focus-visible{
   .whoiam-grid, .speaking-grid, .for-orgs-grid{
     grid-template-columns:1fr;
   }
-  .message-grid{ grid-template-columns:1fr; }
+  .message-item{ grid-template-columns:1fr; gap:0.5rem; }
   .quote-img-wrap{ height:340px; }
   .midia-card{ flex-basis:78vw; }
   .historia-img-wrap{ position:static; top:auto; }
